@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-3.1.0.min.js"></script>
+	</head>
+	<body>
+		<script>
+			$(function(){
+				$('li').first().remove();	// 删除元素
+				
+				$('span').click(function(){
+					console.log(1);
+				});
+				
+				var span = $('span').clone(true);	// 克隆元素(参数为空的话，就只复制元素，不复制事件，加上参数true，事件也一起复制)
+				span.appendTo($('div'));
+			});
+		</script>
+		<ul>
+			<li>red</li>
+			<li>green</li>
+			<li>pink</li>
+		</ul>
+		<span>liuh</span>
+		<div></div>
+	</body>
+</html>

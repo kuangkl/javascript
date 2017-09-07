@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+ul{ height:24px; margin:0; padding:0;}
+li{ float:left; width:80px; height:24px; line-height:24px; display:block; background:#ccc; list-style:none; font-size:14px; margin:0; text-align:center; cursor:pointer; color:#555;}
+.hover{ background:red; color:#dcdcdc;}
+.con{ width:250px; height:100px; display:none; border:1px solid #dcdcdc;}
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="http://t.jjmmw.com/base/js/slides.min.jquery.js"></script> 
+<script> 
+function setTabtow(name,cursel,n){
+for(i=1;i<=n;i++){
+var menu=document.getElementById(name+i);
+var con=document.getElementById("con_"+name+"_"+i);
+menu.className=i==cursel?"hover":"";
+con.style.display=i==cursel?"block":"none";}
+}       
+</script>
+<ul>
+	<li id='tow1' class='hover' onMouseOver="setTabtow('tow',1,3)">角色扮演</li>
+	<li id='tow2' onMouseOver="setTabtow('tow',2,3)">模拟经营</li>
+	<li id='tow3' onMouseOver="setTabtow('tow',3,3)">仙剑系列</li>
+</ul>
+<div id="con_tow_1" class="con" style="display:block">11111</div>
+<div id="con_tow_2" class="con">22222</div>
+<div id="con_tow_3" class="con">33333</div>
+</body>
+</html>

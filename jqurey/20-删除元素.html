@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<style>
+		    *{
+		    	padding: 0;
+		    	margin: 0;
+		    }
+			.box{
+				width: 50px;
+				height: 150px;
+				border: 1px solid #DDDDDD;
+				position: absolute;
+				background: #f60;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				$('#btn1').click(function(){
+					$('div').empty();
+				})
+//				$('#btn1').click(function(){
+//					$('div').remove();
+//				})
+			});
+		</script>
+	</head>
+	<body>
+		<div style="border: 1px solid #f60;">
+			<p>dsfsfssdf</p>
+			<p>dsfsfssdf</p>
+		</div>
+		<button id="btn1">删除元素</button>
+	</body>
+</html>

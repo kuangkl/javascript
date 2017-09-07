@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var txt = document.getElementById('txt');
+				var btn = document.getElementById('btn');
+				var box = document.getElementById('box');
+				
+				btn.onclick = function(){
+					box.innerHTML = txt.value;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" name="txt" id="txt" value="" />
+		<input type="button" name="btn" id="btn" value="按钮" />
+		<div id="box">文字</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var txt = document.getElementById('txt');
+				var btn = document.getElementById('btn');
+				
+				btn.onclick = function(){
+					if(txt.value==''){
+						alert('...')
+					}
+					else if(txt.value=='CSS'){
+						alert('ok');
+					}
+					else if(txt.value=='JS'){
+						alert('ok')
+					}
+					else if(txt.value=='HTML5'){
+						alert('ok')
+					}
+					else{
+						alert('88')
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" name="txt" id="txt" value="" />
+		<input type="button" name="btn" id="btn" value="按钮" />
+	</body>
+</html>

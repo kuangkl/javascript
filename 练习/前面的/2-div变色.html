@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				border: 1px solid #ddd;
+				width: 200px;
+				height: 200px;
+			}
+		</style>
+		<script>
+		    /*
+		     * 1.设置一个tocolor函数，给函数传一个color参数
+		     * 2.获取div的id
+		     * 3.给按钮添加点击事件
+		     */
+			function toColor(color){
+				var box = document.getElementById('box');
+				box.style.background = color;
+			}
+		</script>
+	</head>
+	
+	<body>
+	    <input type="button" value="变红" onclick="toColor('red')" />
+	    <input type="button" value="变黑" onclick="toColor('black')" />
+	    <input type="button" value="变绿" onclick="toColor('green')" />
+	    <input type="button" value="变蓝" onclick="toColor('blue')" />
+	    <div id="box"></div>
+	</body>
+</html>

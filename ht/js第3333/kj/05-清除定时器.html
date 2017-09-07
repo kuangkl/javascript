@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 * 清除定时器
+			 * 	
+			 * 定时器的编号
+			 * 	定时器的一个返回值，返回一个数字，代表当前定时器的编号，我们可根据这个来清除定时器
+			 * 	它返回的编号在不同的浏览器里面是不同的，所以没办法直接拿编号去清除定时器。
+			 * 	可以声明一个变量，把定时器的返回值都存到这个变量里，然后拿这个变量去清除定时器
+			 * 
+			 * 清除定时器的方法
+			 * 	1、清除重复执行定时器
+			 * 		clearInterval(定时器的返回值)
+			 * 	2、清除延迟执行定时器
+			 * 		clearTimeout(定时器的返回值)
+			 */
+			
+			var n = 0;
+			function fn(){
+				n++;
+				console.log(n);
+				if(n==5){
+					clearTimeout(timer);
+				}
+			}
+			
+			var timer = setInterval(fn,1000);
+			
+		</script>
+	</body>
+</html>

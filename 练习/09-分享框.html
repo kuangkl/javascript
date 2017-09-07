@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			*html #box {
+				/*导航兼容IE6*/
+				position: absolute;
+				top: expression(eval(document.documentElement.scrollTop));
+			}
+			
+			#box {
+				width: 150px;
+				height: 200px;
+				background: green;
+				position: fixed;
+				left: -150px;
+				top: 50%;
+				margin-top: -100px;
+			}
+			
+			#box span {
+				position: absolute;
+				width: 20px;
+				height: 60px;
+				line-height: 20px;
+				color: #fff;
+				background: blue;
+				right: -20px;
+				top: 70px;
+			}
+		</style>
+
+		<script>
+		
+			/*
+			 * 1.设置一个空的变量，存储定时器用
+			 * 2.设置一个startMove函数，定义一个参数
+			 * 3.开启定时器
+			 * 4.判断速度正负
+			 * 5.判断是否到达目标点
+			 * 6.做鼠标移出移入，给startMove函数传一个具体的参数
+			 */
+			
+			var timer = null;
+			function startMove(Tiger){
+				
+				var box = document.getElementById('box');
+				
+				clearInterval(timer);
+				timer = setInterval(function(){
+					var speed = 0;
+					if(box.offsetLeft>Tiger){
+						speed = -10;
+					}
+					else{
+						speed = 10;
+					}
+					
+					if(box.offsetLeft==Tiger){
+						clearInterval(timer);
+					}
+					else{
+						box.style.left = box.offsetLeft + speed + 'px';
+					}
+				}, 30);
+			}
+			
+			window.onload =function(){
+				
+				var box = document.getElementById('box');
+				box.onmouseover = function(){
+					startMove(0);
+				}
+				box.onmouseout = function(){
+					startMove(-150);
+				}
+			}
+		</script>
+
+	</head>
+
+	<body style="height: 2000px;">
+		<div id="box">
+			<span>分享</span>
+		</div>
+	</body>
+
+</html>

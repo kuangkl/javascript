@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+								
+				var pre = document.getElementById('pre');
+				var next = document.getElementById('next');
+				var img1 = document.getElementById('img1');
+				var n = 1;
+				
+				
+				pre.onclick = function(){
+					n--;
+					if(n<1){
+						n = 1;
+					}
+					img1.src = '../W3school/img/' + n + '.jpg';
+				}
+				
+				next.onclick = function(){
+					n++;
+					if(n>4){
+						n = 4;
+					}
+					img1.src = '../W3school/img/' + n + '.jpg';
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="pre" id="pre" value="上一张" />
+		<input type="button" name="next" id="next" value="下一张" />
+		<img src="../W3school/img/1.jpg" id="img1"/>
+	</body>
+</html>

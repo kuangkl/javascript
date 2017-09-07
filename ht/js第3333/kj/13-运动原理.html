@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background: #f00;
+				position: absolute;
+				left: 30px;
+				top: 50px;
+			}
+		</style>
+		<script>
+			/*
+			 * 运动的原理
+			 * 	时间版的运动，根据时间去控制速度，已知时间与距离，用它俩算出来速度
+			 * 
+			 * 匀速运动的特点：在任何一个点的速度都是一样的
+			 * 
+			 * 某个点的位置=速度(总的距离/总的时间)*时间(现在的时间-开始的时间)
+			 * 
+			 * 某个点的位置=总的距离/总的时间*(现在的时间-开始的时间)
+			 * 
+			 * 
+			 * 	t		已过的时间
+			 * 	b		开始的位置
+			 * 	c		总距离
+			 * 	d		总时间
+			 * 
+			 * 	
+			 * 	b是元素开始的位置，起点不一定在0,0点。参数里的目标值是要运动到的那个点，而不是要走的距离。所以元素如果不在0，0点开始运动的话，我们需要把起始点的距离加上
+			 * 	
+			 * 	var value=c/d*t+b
+			 */
+			
+			window.onload = function(){
+				
+				var btn = document.getElementById("btn");
+				var box = document.getElementById("box");
+				
+				
+				btn.onclick = function(){
+					
+					c = 300; // 总的距离
+					d = 2000; // 总的时间
+					b = parseInt(getComputedStyle(box).left); // 获取box开始的位置
+					
+					var startime = new Date().getTime(); // 记录开始的时间
+					
+					clearTimeout(timer); // 关闭上一个定时器
+					var timer = setInterval(function(){ // 开启一个定时器
+						
+						var t = new Date().getTime()-startime; // 当前的时间减去开始的时间
+						
+						var value = c/d*t+b;
+						// 当前的位置 = 总的时间/总的距离*(当前的时间-开始的时间)+开始的位置
+						
+						if(t>=d){ // 判断是否到达
+							clearTimeout(timer);
+						}
+						
+						box.style.left = value + 'px';
+					}, 16);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="开始" />
+		<div id="box"></div>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+ul,li{ list-style:none;}
+
+#div1{ width:712px; margin:30px auto; overflow:hidden; position:relative; height:108px; background:#ccc;}
+#div1 ul{ position: absolute; top:0; left:0;}
+#div1 li{ width:178px; height:108px; float:left;}
+</style>
+<script>
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	var oUl=oDiv.getElementsByTagName('ul')[0];
+	var aLi=oDiv.getElementsByTagName('li');
+	
+	oUl.innerHTML=oUl.innerHTML+oUl.innerHTML;
+	oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+	setInterval(function ()
+	{
+		if()
+		oUl.style.left=oUl.offsetLeft-2+'px';
+	},30);
+}
+</script>
+</head>
+
+<body>
+<div id="div1">
+    <ul>
+    	<li><img src="img2/1.jpg" /></li>
+    	<li><img src="img2/2.jpg" /></li>
+    	<li><img src="img2/3.jpg" /></li>
+    	<li><img src="img2/4.jpg" /></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box div{
+				width: 200px;
+				height: 200px;
+				border: 1px solid #f00;
+				display: none;
+			}
+			.active{
+				background: red;
+			}
+		</style>
+		<script src="jquery-3.1.0.js"></script>
+		<!--<script>
+			
+			$(function(){
+				$('input').click(function(){
+					$('input').attr('class','');		// 点击按钮的时候去掉所有的样式
+					$(this).attr('class','active');		// 给当前的按钮添加样式active
+					
+					$('#box div').css('display','none');	// 点击按钮所有的div隐藏
+					$('#box div').eq($(this).index()).css('display','block');	// 当前对应的div显示
+				});
+			});
+		</script>-->
+		<script>
+			/*
+			 * 通过索引找到对应的元素
+			 * 	eq(index)			参数为下标
+			 * 
+			 * 1、点击按钮让所有的按钮class为空，当前的按钮class负值active
+			 * 2、让所有的div样式为none，对应当前的样式为block
+			 */
+			$(function(){
+				$('input').click(function(){
+					$('input').attr('class','');
+					$(this).attr('class','active');
+					
+					$('#box div').css('display','none');
+					$('#box div').eq($(this).index()).css('display','block');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<input class="active" type="button" value="按钮一" />
+			<input type="button" value="按钮二" />
+			<input type="button" value="按钮三" />
+			<div style="display: block;">1111</div>
+			<div>2222</div>
+			<div>3333</div>
+		</div>
+	</body>
+</html>

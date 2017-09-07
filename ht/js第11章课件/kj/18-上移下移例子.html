@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-3.1.0.js"></script>
+		
+		<script>
+			/*
+			 * 1、第一步：先找到元素的第一层父级元素(parent找到父级元素)
+			 * 2、第二步：找到该元素父级元素的上一个兄弟节点(找到前一个兄弟节点)
+			 * 3、第三步：判断上一个兄弟节点是否有length
+			 * 4、第四步：用before让父级元素前移(after是后移)
+			 */
+			$(function(){
+				$('input[value="上移"]').click(function(){
+					var curli = $(this).parent();		// 找到父级元素
+					var prevli = curli.prev();			// 找到父级元素的前一个兄弟节点
+					if(prevli.length){
+						prevli.before(curli);			// 让元素前移一个
+					}
+					else{
+						alert('没有了');
+					}
+				});
+				$('input[value="下移"]').click(function(){
+					var curli = $(this).parent();
+					var nextli = curli.next();
+					if(nextli.length){
+						nextli.after(curli);
+					}
+					else{
+						alert('没有了');
+					}
+				});
+			});
+			
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>1、<input type="button" value="上移"/><input type="button" value="下移"/></li>
+			<li>2、<input type="button" value="上移"/><input type="button" value="下移"/></li>
+			<li>3、<input type="button" value="上移"/><input type="button" value="下移"/></li>
+			<li>4、<input type="button" value="上移"/><input type="button" value="下移"/></li>
+			<li>5、<input type="button" value="上移"/><input type="button" value="下移"/></li>
+			<li>6、<input type="button" value="上移"/><input type="button" value="下移"/></li>
+		</ul>
+	</body>
+</html>

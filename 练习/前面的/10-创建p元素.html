@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		    /*
+		     * 1.创建一个新的元素
+		     * 2.创建一个新的文本节点
+		     * 3.给新的元素追加上新的文本节点
+		     * 4.新的元素加给已经的元素
+		     */
+			window.onload = function(){
+				
+				var oP = document.createElement('p'); // 创建新的p标签
+				var node = document.createTextNode('新的段落'); // 创建新的文本节点
+				oP.appendChild(node); // 创建的新的文本节点追加给新创建的p
+				
+				var box = document.getElementById('box');
+				box.appendChild(oP); // 把p元素追加给box
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p>这是一个段落</p>
+		</div>
+	</body>
+</html>

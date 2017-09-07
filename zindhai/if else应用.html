@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<script>
+var d = new Date()
+var time= d.getHours()
+if(time<9)
+{
+	alert('早上好');
+}
+else if(time>=10&&time<12)
+{
+	alert('上午好');
+}
+else
+{
+	alert('你好吗')
+}
+</script>
+
+if()...if else()...else
+<br />
+<script>
+function jsk()
+{
+	alert('cuo wu' +"\n"+ 'ti shi')
+}
+</script>
+<input type="button" value="sddsad" onclick="jsk()" />
+
+<br />
+<script>
+for(var i=0; i<5; i++)
+{
+	document.write('shu zi shi'+i);
+	document.write('<br/>')
+}
+</script>
+<br />
+<script>
+for(var i=1; i<=6; i++)
+{
+	document.write('<h' + i + ">这是标题" + i);
+}
+</script>
+
+
+
+<p>点击下面的按钮来显示今天是周几：</p>
+
+<button onclick="myFunction()">点击这里</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction()
+{
+var x;
+var d=new Date().getDay();
+switch (d)
+  {
+  case 0:
+    x="Today it's Sunday";
+    break;
+  case 1:
+    x="Today it's Monday";
+    break;
+  case 2:
+    x="Today it's Tuesday";
+    break;
+  case 3:
+    x="Today it's Wednesday";
+    break;
+  case 4:
+    x="Today it's Thursday";
+    break;
+  case 5:
+    x="Today it's Friday";
+    break;
+  case 6:
+    x="Today it's Saturday";
+    break;
+  }
+document.getElementById("demo").innerHTML=x;
+}
+</script>
+
+<script>
+window.onload=function ()
+{
+	var oText1=document.getElementById('text1');
+	var oText2=document.getElementById('text2');
+	var oBtn=document.getElementById('btn');
+	
+	oBtn.onclick=function ()
+	{
+		var n1=parseInt(oText1.value);
+		var n2=parseInt(oText2.value);
+		if(isNaN(n1))
+		{
+			alert('第一个输入有错误');
+		}
+		else if(isNaN(n2))
+		{
+			alert('第二个输入有错误');
+		}
+		else
+		{
+			alert(n1+n2);
+		}
+	}
+}
+</script>
+<input type="text" id="text1" />
+<input type="text" id="text2" />
+<input type="button" id="btn" value="求和" />
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box1,#box2{
+				font-size: 50px;
+				width: 100px;
+				height: 100px;
+				border: 1px solid #f00;
+			}
+		</style>
+		<script>
+			/*
+			 * 1、clearInterval() 
+			 * 2、clearTimeout()
+			 * 
+			 */
+			window.onload = function(){
+				
+				var btn1 = document.getElementById("btn1");
+				var btn2 = document.getElementById("btn2");
+				var box1 = document.getElementById("box1");
+				var box2 = document.getElementById("box2");
+				
+				var n = 10;
+				function fn1(){
+					n++;
+					box1.innerHTML = n;
+				}
+				var timer1 = setInterval(fn1,1000);
+				btn1.onclick = function(){
+					clearTimeout(timer1);
+				}
+				
+				function fn2(){
+					n--;
+					box2.innerHTML = n;
+				}
+				var timer2 = setTimeout(fn2,3000);
+				btn2.onclick = function(){
+					clearTimeout(timer2);
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="清除1" />
+		<input type="button" id="btn2" value="清除2" />
+		<div id="box1"></div>
+		<div id="box2"></div>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+		<script>
+			$(function(){
+//				$('button').click(function(){
+//					alert('背景颜色 = ' + $('p').css('background-color'));
+//				});
+//              $('button').click(function(){
+//              	$('p').css('background','red');
+//              });
+                $('button').click(function(){
+                	$('p').css({
+                		'background':'red',
+                		'font-size':'30px',
+                		'color':'#fff'
+                	});
+                });
+			});
+		</script>
+	</head>
+
+	<body>
+		<h2>这是一个标题</h2>
+		<!--<p style="background-color:#ff0000">这是一个段落。</p>-->
+		<p style="background-color:#00ff00">这是一个段落。</p>
+		<p style="background-color:#0000ff">这是一个段落。</p>
+		<button>返回 p 元素的 background-color </button>
+	</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div2{
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+		<script src="jquery-3.1.0.js"></script>
+		<script>
+			/*
+			 * jquery中的window.onload
+			 * 	$(callBack)
+			 * 	$(document).ready(callBack)
+			 * 	$().ready(callBack)
+			 * 
+			 * 以上三种方法，在页面中可以同时写
+			 * 
+			 * 
+			 * jquery中获取元素
+			 * 	$(selector);
+			 * 
+			 * 在jquery中获取到的元素都是一个集合
+			 * 	length			获取到元素的数量
+			 */
+//			$(function(){
+//				console.log(1);
+//			});
+//			
+//			$(document).ready(function(){
+//				console.log(2);
+//			});
+//			
+//			$().ready(function(){
+//				console.log(3);
+//			});
+
+			
+			$(function(){
+				console.log($('input'));                  	// 获取input标签
+				console.log($('div span'));               	// 从div身上获取span标签
+				console.log($('.list li'));					// 从list身上获取li标签
+				console.log($('.list span'));				// 如果是一个获取不到的元素，那它不会报错。可以判断它的length属性
+				
+				//var div3 = $('#div2');
+				//div3.css('background','red');
+				var div2 = document.getElementById('div2');	//原生态js获取到的元素不能用jQuery里面的方法，要用的话需要把原生态js获取的元素转换成jQuery的形式
+				$(div2).css('background','black');			//把原生态的对象包装成jQuery的对象
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" value="按钮" />
+		<input type="button" value="按钮" />
+		<div id="box">123</div>
+		<div id="div1">
+			<span>kaivon</span>
+		</div>
+		<ul class="list">
+			<li>kaivon1</li>
+		</ul>
+		<div id="div2">kaivon3</div>
+	</body>
+</html>

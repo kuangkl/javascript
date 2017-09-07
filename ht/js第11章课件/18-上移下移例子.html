@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.1.0.js"></script>
+		<script>
+			/*
+			 * 上一个兄弟节点
+			 * 	.prev()
+			 * 
+			 * 下一个兄弟节点
+			 * 	.next()
+			 * 
+			 */
+			
+			$(function(){
+				//上移功能
+				$('input[value="上移"]').click(function(){
+					var curLi=$(this).parent();		// 元素的第一层父节点
+					var prevLi=curLi.prev();		// 上一个兄弟节点
+					
+					if(prevLi.length){			// 条件：上一个兄弟节点有length
+						prevLi.before(curLi);	// 把当前的元素移动到兄弟节点前面
+					}else{
+						alert('到头了');
+					}
+				});
+				
+				//下移功能
+				$('input[value="下移"]').click(function(){
+					var curLi=$(this).closest('li');
+					var nextLi=curLi.next();
+					
+					if(nextLi.length){
+						nextLi.after(curLi);
+					}else{
+						alert('到头了');
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>1、<input type="button" value="上移"/><input type="button" value="下移"/></li>
+			<li>2、<input type="button" value="上移"/><input type="button" value="下移"/></li>
+			<li>3、<input type="button" value="上移"/><input type="button" value="下移"/></li>
+			<li>4、<input type="button" value="上移"/><input type="button" value="下移"/></li>
+			<li>5、<input type="button" value="上移"/><input type="button" value="下移"/></li>
+		</ul>
+	</body>
+</html>

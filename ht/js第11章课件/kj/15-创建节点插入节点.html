@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-3.1.0.min.js"></script>
+		<script>
+			$(function(){
+				var li1 = $('<li>red</li>');
+				var li2 = $('<li>green</li>');
+				$('.list').append(li1);		// 创建元素添加的父集的最后面
+				$('.list').prepend(li2);	// 创建元素添加到父集的最开始
+				
+				var div1 = $('<div>black</div>');
+				var div2 = $('<div>yellow</div>');
+				$('.list').before(div1);	// 把元素添加到一个指定元素的前面
+				$('.list').after(div2);		// 把元素添加到一个指定元素的后面
+			});
+		</script>
+	</head>
+	<body>
+		<ul class="list">
+		</ul>
+	</body>
+</html>

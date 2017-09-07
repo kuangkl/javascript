@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #ddd;
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			/*
+			 * setTimeout是延迟一定的时间执行一件事情
+			 * setTimeou(function(){
+			 *     当时间到达后，会执行这里的代码
+			 * },时间);
+			 * 
+			 * 
+			 */
+			window.onload = function(){
+				
+				var box = document.getElementById("box");
+				var i = 0; // 设置变量等于0，方便后面累加
+				
+				// 点击box
+				box.onclick = function(){
+					setTimeout(fn,2000); // 开启一个定时器，2秒后执行fn
+				}
+				
+				function fn(){
+					i++;
+					box.innerHTML = i;
+				}
+			}
+		</script>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

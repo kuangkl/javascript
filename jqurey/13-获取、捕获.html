@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<style>
+		    *{
+		    	padding: 0;
+		    	margin: 0;
+		    }
+			.box{
+				width: 50px;
+				height: 150px;
+				border: 1px solid #DDDDDD;
+				position: absolute;
+				background: #f60;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				$('#btn1').click(function(){
+					alert('text:' + $('#text').text());
+				});
+				$('#btn2').click(function(){
+					alert('html:' + $('#text').html());
+				});
+				$('#btn3').click(function(){
+					alert('值为:' + $('#test').val());
+				});
+				$('#btn4').click(function(){
+					alert('href:' + $('#runoob').attr('href'));
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<p id="text">解秘中央经济工作会议 <b>A股迎重磅信号</b></p>
+		<p>名称: <input type="text" id="test" value="W3Cschool教程"></p>
+		<p><a href="http://www.w3cschool.cn" id="runoob">W3Cschool教程</a></p>
+		<button id="btn4">显示 href 属性的值</button>
+		<button id="btn3">显示值</button>
+		<button id="btn1">显示文本</button>
+		<button id="btn2">显示 HTML</button>
+	</body>
+</html>

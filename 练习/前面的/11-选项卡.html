@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#ul1{
+				height: 30px;
+			}
+			#ul1 li{
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				background: #f5f5f5;
+				float: left;
+				list-style: none;
+			}
+			#ul1 li.hover{
+				background: #f60;
+			}
+			#ul2{
+				width: 300px;
+				height: 200px;
+				border: 1px solid #ddd;
+			}
+			#ul2 li{
+				width: 300px;
+				height: 200px;
+				display: none;
+			}
+		</style>
+		<script>
+			/*
+			 * 1.获取各元素的id
+			 * 2.做一个for循环
+			 * 3.给每一个li都设置一个index属性
+			 * 4.添加一个鼠标移入事件
+			 * 5.再做一个for循环
+			 */
+			
+			window.onload = function(){
+				
+				var oul1 = document.getElementById('ul1');
+				var oli = oul1.getElementsByTagName('li');
+				var oul2 = document.getElementById('ul2');
+				var ali = oul2.getElementsByTagName('li');
+				
+				for(var i=0; i<oli.length; i++){
+					
+					oli[i].index = i;
+					oli[i].onmouseover = function(){
+						
+						for(var i=0; i<oli.length; i++){
+							oli[i].className = '';
+							ali[i].style.display = 'none'
+						}
+						this.className = 'hover';
+						ali[this.index].style.display = 'block';
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li class="hover">11</li>
+			<li>22</li>
+			<li>33</li>
+			<li>44</li>
+		</ul>
+		<ul id="ul2">
+			<li style="display: block;">11</li>
+			<li>22</li>
+			<li>33</li>
+			<li>44</li>
+		</ul>
+	</body>
+</html>

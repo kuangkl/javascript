@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		    *{
+		    	margin: 0;
+		    	padding: 0;
+		    }
+			#box {
+				width: 150px;
+				height: 200px;
+				background: green;
+				position: absolute;
+				left: -150px;
+			}
+			
+			#box span {
+				position: absolute;
+				width: 20px;
+				height: 60px;
+				line-height: 20px;
+				background: #f60;
+				right: -20px;
+				top: 70px;
+				color: #fff;
+			}
+			.box{
+				text-align: center;
+				margin-top: 50px;
+				font-size: 60px;
+			}
+			.box span{
+				font-size: 30px;
+			}
+		</style>
+		
+		<script>
+			/*
+			 *设置一个空的变量存储定时器用
+			 *给函数设置一个参数
+			 *关闭下一个定时器
+			 *给速度做一个正负判断
+			 *最后给盒子做鼠标移入移出
+			 */
+			
+			
+			var timer = null; //设置一个空的变量，存储定时器的
+			function startMove(Tiger){ // 给startMove函数设置一个参数
+				
+				var oDiv = document.getElementById('box');
+				
+				clearInterval(timer); // 关闭下一个定时器
+				timer = setInterval(function(){ // 开启一个定时器
+					
+					var speed = 0;
+					if(oDiv.offsetLeft < Tiger){ // 设置一个变量速度speed，给速度做正负判断
+						speed=10;
+					}
+					else{
+						speed=-10;
+					}
+					
+					if(oDiv.offsetLeft == Tiger){ // 如果box到达目标点，就关闭定时器
+						clearInterval(timer);
+					}
+					else{
+						oDiv.style.left = oDiv.offsetLeft + speed + 'px'; // ？
+					}
+				}, 30);
+			}
+			
+			window.onload = function(){
+				
+				var oDiv = document.getElementById('box');
+				
+				oDiv.onmouseover = function(){
+					startMove(0); // 给startMove函数传一个参数0
+				}
+				oDiv.onmouseout = function(){
+					startMove(-150); // 给startMove函数传一个参数-150
+				}
+			}
+		</script>
+		
+	</head>
+	<body>
+		<div class="box">[ <span>悬浮在左边的分享框</span> ]</div>
+		<div id="box">
+			<span>分享</span>
+		</div>
+	</body>
+</html>

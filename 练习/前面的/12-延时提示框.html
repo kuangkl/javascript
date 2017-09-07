@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box1{
+				width: 100px;
+				height: 100px;
+				background: #f5f5f5;
+			}
+			#box2{
+				width: 200px;
+				height: 200px;
+				background: #f60;
+				position: absolute;
+				top: 0;
+				left: 120px;
+				display: none;
+			}
+		</style>
+		<script>
+			/*
+			 * 1.获取各元素的id
+			 * 2.设置一个空的变量，存储定时器
+			 */
+			window.onload = function(){
+				
+				var box1 = document.getElementById('box1');
+				var box2 = document.getElementById('box2');
+				
+				var timer = null;
+				box2.onmouseover = box1.onmouseover = function(){
+					box2.style.display = 'block';
+					clearInterval(timer);
+				}
+				box2.onmouseout = box1.onmouseout = function(){
+					timer = setInterval(function(){
+						box2.style.display = 'none';
+					}, 300);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<div id="box2"></div>
+	</body>
+</html>

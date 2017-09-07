@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<div id="dome">hello world</div>
+<script>
+var x='how old are you?你好吗';
+document.getElementById('dome').innerHTML=x;
+</script>
+
+<script>
+document.write(Date());
+</script>
+
+<h1 id="oh1">wo shi yi ge huai dan.</h1>
+<script>
+var x=document.getElementById('oh1');
+var b='ni hao ma ?';
+x.innerHTML=b;
+</script>
+
+
+<img id="image" src="eg_tulip.jpg" />
+<script>
+var img=document.getElementById('image');
+img.src='shanghai_lupu_bridge.jpg';
+</script>
+
+<p id="p1">hello ni hao</p>
+<p id="p2">hello ni hao</p>
+<script>
+var op=document.getElementById('p2');
+op.style.color='red';
+op.style.fontFamily='arial';
+op.style.fontSize='24px';
+</script>
+
+<script>
+function mp()
+{
+	var Op=document.getElementById('p3');
+	Op.style.color='blue';
+}
+</script>
+<p id="p3">My liu hao</p>
+<input type="button" onclick="mp()" value="123" />
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<style>
+		    *{
+		    	padding: 0;
+		    	margin: 0;
+		    }
+			.box{
+				width: 50px;
+				height: 150px;
+				border: 1px solid #DDDDDD;
+				position: absolute;
+				background: #f60;
+				display: none;
+			}
+		</style>
+		
+		<script>
+		    $(document).ready(function(){
+		    	$('p').click(function(){
+		    		$('.box').slideDown(5000)
+		    	});
+		    	$('button').click(function(){
+		    		$('.box').stop();
+		    	});
+		    });
+		    
+		    // $(selector).stop(stopAll,goToEnd); 模板形式，每个代码里面都有的
+			//$("#stop").click(function(){
+			//  $("#panel").stop();
+			//});
+		</script>
+	</head>
+	<body>
+		<button>按钮</button>
+		<p>dianj</p>
+		<div class="box"></div>
+	</body>
+</html>

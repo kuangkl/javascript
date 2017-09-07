@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#text{
+				width: 400px;
+				border: 1px solid #000000;
+				background: #f5f5f7;
+				margin: 50px auto;
+				padding: 20px;
+				line-height: 1.5;
+			}
+			#text strong{
+				color: #f60;
+				cursor: pointer;
+			}
+			#tips{
+				width: 120px;
+				border: 1px #f60 solid;
+				position: absolute;
+				padding: 10px;
+				display: none;
+				background: #F0EFEF;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				
+				var arrtxt = [
+				    'JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。',
+	                'JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。',
+	                '超文本标记语言，标准通用标记语言下的一个应用。',
+	                '超文本标记语言，标准通用标记语言下的一个应用。'
+				]
+				
+				//var otxt = document.getElementById("text");
+				var otips = document.getElementById("tips");
+				var str = document.querySelectorAll("strong");
+				
+				for(var i=0; i<str.length; i++){
+					str[i].index = i;
+					str[i].onmouseover = function(){
+						otips.style.display = 'block';
+						otips.innerHTML = arrtxt[this.index];
+						
+						otips.style.left = this.offsetLeft + 'px';
+						otips.style.top = this.offsetTop + 20 + 'px';
+						
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="text">
+			<strong>JavaScript</strong>一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为<strong>JavaScript</strong>引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在<strong>HTML</strong>（标准通用标记语言下的一个应用）网页上使用，用来给<strong>HTML</strong>网页增加动态功能。
+		</div>
+		<div id="tips"></div>
+	</body>
+
+</html>

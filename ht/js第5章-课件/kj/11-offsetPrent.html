@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #f00;
+				margin: 70px 0 0 70px;
+			}
+			#box2{
+				position: relative;
+			}
+		</style>
+		<script>
+			/*
+			 * offsetPrent 获取离元素最近的有定位的父及
+			 * 
+			 * 语法 
+			 *    元素.offsetPrent
+			 * 
+			 */
+			window.onload = function(){
+				var box4 = document.getElementById("box4");
+				
+//				console.log(box4.offsetParent);
+//				box4.offsetParent.style.background = 'red';
+				
+				console.log(box4.offsetParent);
+				box4.offsetParent.style.background = 'green';
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			box1
+			<div id='box2'>
+				box2
+				<div id='box3'>
+					box3
+					<div id="box4">box4</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

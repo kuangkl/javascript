@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!--<script>
+			function cutDown(target){
+				
+				var cutDate = new Date(); // 获取当前的时间
+				var v = Math.abs(target-cutDate); // 传进来的时间减去当前的时间（毫秒）
+				
+				return{ // 把毫秒转成对应的天、时、分、秒
+					d:parseInt(v/(24*3600000)),
+					h:parseInt(v%(24*3600000)/3600000),
+					m:parseInt(v%(24*3600000)%3600000/60000),
+					s:parseInt(v%(24*3600000)%3600000%60000/1000)
+				}
+			}
+			
+			window.onload = function(){
+				
+				var d1 = document.getElementById("d1");
+				var d2 = document.getElementById("d2");
+				
+				var target1 = new Date(2018,8,8);
+				var target2 = new Date(2010,8,8);
+				
+				setInterval(function(){
+					d1.innerHTML = '离2018年8月8号还有' 
+					             + cutDown(target1).d + '天'
+					             + cutDown(target1).h + '时'
+					             + cutDown(target1).m + '分'
+					             + cutDown(target1).s + '秒';
+				}, 1000);
+				setInterval(function(){
+					d2.innerHTML = '距离2010年8月8号过去了'
+					             + cutDown(target2).d + '天'
+					             + cutDown(target2).h + '时'
+					             + cutDown(target2).m + '分'
+					             + cutDown(target2).s + '秒';
+				})
+			}
+		</script>-->
+		<script>
+			/*
+			 * 1、设置一个cutDown函数，传一个参数
+			 * 2、传进来的时间减去当前的时间(毫秒)
+			 * 3、把毫秒转化成对应的天、时、分、秒，再返回出去
+			 */
+			function cutDown(target){
+				
+				var cutDate = new Date(); // 获取当前的时间
+				var v = Math.abs(target-cutDate); // 传进来的时间减去当前的时间(毫秒)
+				// Math.abs 取绝对值
+				
+				return{ // 把毫秒转化成对应的天、时、分、秒
+					d:parseInt(v/(24*3600000)),
+					h:parseInt(v%(24*3600000)/3600000),
+					m:parseInt(v%(24*3600000)%3600000/60000),
+					s:parseInt(v%(24*3600000)%3600000%60000/1000)
+				}
+			}
+			
+			/*
+			 * 1、获取需要的id
+			 * 2、设置目标时间
+			 * 3、开启定时器
+			 */
+			window.onload = function(){
+				
+				var d1 = document.getElementById('d1');
+				var d2 = document.getElementById('d2');
+				
+				var target1 = new Date(2018,8,8);
+				var target2 = new Date(2008,8,8);
+				
+				setInterval(function(){
+					d1.innerHTML = '距离2018年8月8日还有'
+					             + cutDown(target1).d + '天'
+					             + cutDown(target1).h + '时'
+					             + cutDown(target1).m + '分'
+					             + cutDown(target1).s + '秒'
+				},1000);
+				
+				setInterval(function(){
+					d2.innerHTML = '距离2008年8月8日过去了'
+					             + cutDown(target2).d + '天'
+					             + cutDown(target2).h + '时'
+					             + cutDown(target2).m + '分'
+					             + cutDown(target2).s + '秒'
+				},1000);
+			}
+		</script>
+		<div id="d1"></div>
+		<div id="d2"></div>
+	</body>
+</html>

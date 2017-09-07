@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="按钮" />
+		<p id='pp'></p>
+		<script>
+			var x = document.getElementById('btn');
+			x.addEventListener('click',tt1);
+			x.addEventListener('mouseover',tt2);
+			x.addEventListener('mouseout',tt3);
+			function tt1(){
+				document.getElementById('pp').innerHTML += '1111' + '<br>'
+			}
+			function tt2(){
+				document.getElementById('pp').innerHTML += '2222' + '<br>'
+			}
+			function tt3(){
+				document.getElementById('pp').innerHTML += '3333' + '<br>'
+			}
+		</script>
+	</body>
+</html>

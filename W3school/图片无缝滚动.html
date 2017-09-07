@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片无缝滚动</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#div1{
+				width: 534px;
+				height: 108px;
+				margin: 0 auto;
+				margin-top: 100px;
+				position: relative;
+				background: black;
+				overflow: hidden;
+			}
+			#div1 ul{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#div1 li{
+				width: 178px;
+				height: 108px;
+				float: left;
+				list-style: none;
+			}
+			#btn{
+				width: 534px;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+		</style>
+		<!--<script> 第一阶段
+			window.onload=function(){
+				var oDiv=document.getElementById('div1');
+				var oUl=oDiv.getElementsByTagName('ul')[0];
+				var oLi=oUl.getElementsByTagName('li');
+				
+				//克隆一个ul
+				oUl.innerHTML=oUl.innerHTML+oUl.innerHTML;
+				//设置ul的宽度,任意一个图片的宽度乘以li的length
+				oUl.style.width=oLi[0].offsetWidth*oLi.length+'px';
+				//设置一个定时器
+				setInterval(function(){
+					oUl.style.left=oUl.offsetLeft-2+'px';
+				},30);
+			}
+		</script>-->
+		<!--<script> 第二阶段
+			window.onload=function(){
+				var oDiv=document.getElementById('div1');
+				var oUl=document.getElementsByTagName('ul')[0];
+				var oLi=document.getElementsByTagName('li');
+				
+				oUl.innerHTML=oUl.innerHTML+oUl.innerHTML;
+				oUl.style.width=oLi[0].offsetWidth*oLi.length+'px';
+				
+				setInterval(function(){
+					if(oUl.offsetLeft<-oUl.offsetWidth/2){
+						oUl.style.left='0';
+					}
+					oUl.style.left=oUl.offsetLeft-2+'px';
+				},30)
+			}
+		</script>-->
+		<!--<script> 第三阶段
+			window.onload=function(){
+				var oDiv=document.getElementById('div1');
+				var oUl=oDiv.getElementsByTagName('ul')[0];
+				var oLi=oUl.getElementsByTagName('li');
+				
+				oUl.innerHTML=oUl.innerHTML+oUl.innerHTML;
+				oUl.style.width=oLi[0].offsetWidth*oLi.length+'px';
+				
+				setInterval(function(){
+					if(oUl.offsetLeft < -oUl.offsetWidth/2){
+						oUl.style.left='0';
+					}
+					if(oUl.offsetLeft > 0){
+						oUl.style.left=-oUl.offsetWidth/2+'px';
+					}
+					oUl.style.left=oUl.offsetLeft+2+'px';
+				},30)
+			}
+		</script>-->
+		<!--<script>  第四阶段(鼠标经过滚动暂停)
+		    window.onload=function(){
+		    	var oDiv=document.getElementById('div1');
+		    	var oUl=oDiv.getElementsByTagName('ul')[0];
+		    	var oLi=oUl.getElementsByTagName('li');
+		    	
+		    	oUl.innerHTML=oUl.innerHTML+oUl.innerHTML;
+		    	oUl.style.width=oLi[0].offsetWidth*oLi.length+'px';
+		    	
+		    	function move(){
+		    		if(oUl.offsetLeft < -oUl.offsetWidth/2){
+		    			oUl.style.left='0';
+		    		}
+		    		if(oUl.offsetLeft > 0){
+		    			oUl.style.left=-oUl.offsetWidth/2+'px';
+		    		}
+		    		oUl.style.left=oUl.offsetLeft+2+'px';
+		    	}
+		    	
+		    	var timer=setInterval(move,30)
+		    	
+		    	oDiv.onmouseover=function(){
+		    		clearTimeout(timer)
+		    	}
+		    	oDiv.onmouseout=function(){
+		    		timer=setInterval(move,30)
+		    	}
+		    }
+		</script>-->
+		
+		<script>
+			window.onload=function(){
+				var oDiv=document.getElementById('div1'); // 获取div1
+				var oUl=oDiv.getElementsByTagName('ul')[0]; //获取div1下面所有的ul的第一个ul
+				var oLi=oUl.getElementsByTagName('li'); //获取ul下面的所有li
+				
+				oUl.innerHTML=oUl.innerHTML+oUl.innerHTML; //克隆一个ul
+				oUl.style.width=oLi[0].offsetWidth*oLi.length+'px'; 
+				//设置ul的宽度，ul的宽度是任意一个li的宽度乘以li的length(单位px)
+				
+				function move(){ //定义一个move函数
+					if(oUl.offsetLeft<-oUl.offsetWidth/2){ //？
+						oUl.style.left= 0+'px'; //达到上面的条件时，把ul的left还原成0
+					}
+					if(oUl.offsetLeft>0){ //？
+						oUl.style.left=-oUl.offsetWidth/2 +'px'; 
+					}
+					oUl.style.left=oUl.offsetLeft+ speed +'px'; //speed默认是2，向右滚动
+				}
+				var timer=setInterval(move,1000) //开一个定时器
+				
+				oDiv.onmouseover=function(){
+					clearTimeout(timer); //鼠标经过div1时，关闭定时器
+				}
+				oDiv.onmouseout=function(){
+					timer=setInterval(move,30); //鼠标离开div1时，开启定时器
+				}
+				
+				var speed=2; //设置一个speed函数，默认是2(方便添加按钮，切换左右的)
+				
+				var oBtn=document.getElementById('btn');
+				var aa=oBtn.getElementsByTagName('a');
+				aa[0].onclick=function(){
+					speed=-2;
+				}
+				aa[1].onclick=function(){
+					speed=2;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div id="div1">
+			<ul>
+				<li><img src="img/1.jpg"/></li>
+				<li><img src="img/2.jpg"/></li>
+				<li><img src="img/4.jpg"/></li>
+			</ul>
+		</div>
+		<div id="btn">
+			<a href="javascript:;">向左</a>
+	        <a href="javascript:;">向右</a>
+		</div>
+	</body>
+</html>

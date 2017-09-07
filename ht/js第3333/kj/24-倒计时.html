@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 1、设置一个函数cutDown，里面传一个参数
+			 * 2、获取当前的时间，把传进来的时间减去当前的时间，去绝对值Math.abs(有可能是负数)
+			 * 3、把毫秒数转换成对应的天、时、分、秒,再返回
+			 * 4、获取box 
+			 * 5、设置一个日期对象(传入一个参数)
+			 * 6、开启定时器
+			 * 7、把时间都传入box innerHTML
+			 * 
+			 */
+			function cutDown(target){
+				
+				var cutDate = new Date(); //获取当前时间
+				var v = Math.abs(target-cutDate); // 传入的时间减去当前的时间(是毫秒)
+				// v 实际是现在离目标点的时间
+				
+				return { // 把毫秒数转换成对应的天、时、分、秒
+					d:parseInt(v/(24*3600000)), // v除以一天的时间（毫秒）
+					h:parseInt(v%(24*3600000)/3600000),
+					m:parseInt(v%(24*3600000)%3600000/60000),
+					s:parseInt(v%(24*3600000)%3600000%60000/1000)
+				}
+				
+			}
+			
+			window.onload = function(){
+				
+				var box = document.getElementById("box");
+				var target1 = new Date(2018,8,8);
+				
+				setInterval(function(){
+					box.innerHTML = '离2018年8月8号还有' 
+					              + '<span style="background:#f60;color:#fff">' + cutDown(target1).d + '</span>' + '天' // 倒计时的天数
+					              + '<span style="background:#f60;color:#fff">' + cutDown(target1).h + '</span>' + '时' // 倒计时的时
+					              + '<span style="background:#f60;color:#fff">' + cutDown(target1).m + '</span>' + '分' // 倒计时的分钟
+					              + '<span style="background:#f60;color:#fff">' + cutDown(target1).s + '</span>' + '秒' // 倒计时的秒数
+				},1000);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

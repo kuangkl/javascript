@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background: #000;
+			}
+			body,p,dl,dt,dd{
+				margin: 0;
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			img{
+				border: none;
+			}
+			
+			/*手风琴*/
+			#photo ul{
+				width: 600px;
+				margin: 100px auto;
+				color: #fff;
+			}
+			#photo li{
+				float: left;
+				cursor: pointer;
+			}
+			
+			#photo li img{
+				float: left;
+				margin-right: 3px;
+			}
+			
+			#photo li div{
+				float: left;
+				width: 0;
+				height: 191px;
+				background: #313131;
+				overflow: hidden;
+			}
+			#photo li:nth-of-type(1) div{
+				width: 224px;
+			}
+			#photo li dl{
+				width: 212px;
+				padding: 5px 0 0 12px;
+			}
+			#photo li dt{
+				font: 22px/45px "微软雅黑";
+			}
+			#photo li dd{
+				font: 12px/20px "微软雅黑";
+			}
+			#photo li div a{
+				display: block;
+				width: 21px;
+				height: 21px;
+				background: url(img2/ico_01.jpg);
+				margin: 10px 0 0 100px;
+			}
+		</style>
+		<script src="js/jquery-3.1.0.js"></script>
+
+		<script>
+			/*
+			 * 1、找到li，给li添加一个鼠标移入效果
+			 * 2、找到li下所有div，添加一个动画效果，让div的宽度变成0
+			 * 3、让当前的div宽度变成224
+			 */
+			$(function(){
+				$('li').mouseover(function(){
+					$('li').find('div').stop().animate({'width':0},300,'linear');
+					$(this).find('div').stop().animate({'width':224},300,'linear');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<section id="photo">
+			<ul class="clear">
+				<li>
+					<img src="img/2.jpg" width="122" height="191"/>
+					<div>
+						<dl>
+							<dt>认识讲师</dt>
+							<dd>
+								<p>你看到的，你所认同的，在这里都将被实现。学习艰辛，我们一路同行</p>
+							</dd>
+						</dl>
+						<a href="javascript:;"></a>
+					</div>
+				</li>
+				<li>
+					<img src="img/big.jpg" width="122" height="191"/>
+					<div>
+						<dl>
+							<dt>教学管理</dt>
+							<dd>
+								<p>或许看上去不会那么"友善"，甚至略微苛刻，我们相信您也期待一个新的学习体验。</p>
+							</dd>
+						</dl>
+						<a href="javascript:;"></a>
+					</div>
+				</li>
+				<li>
+					<img src="img/2.jpg" width="122" height="191"/>
+					<div>
+						<dl>
+							<dt>学员反馈</dt>
+							<dd>
+								<p>没有慷慨且煽情的言语，甚至不连贯的语句也测证"剧本"的可信赖性。"简单可依赖"，不只是一句口号。</p>
+							</dd>
+						</dl>
+						<a href="javascript:;"></a>
+					</div>
+				</li>
+			</ul>
+		</section>
+	</body>
+</html>

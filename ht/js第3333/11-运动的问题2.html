@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box1,#box2{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				left: 0;
+				top: 50px;
+				background: #f60;
+			}
+			#box2{
+				top: 200px;
+			}
+		</style>
+		<script>
+			/*
+			 * 
+			 * 
+			 */
+		
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var box1 = document.getElementById("box1");
+				var box2 = document.getElementById("box2");
+				var timer;
+				
+				function move(obj,attr,target){
+					clearTimeout(obj.timer);
+					obj.timer = setInterval(function(){
+						
+						var value = parseInt(getComputedStyle(obj)[attr]);
+						
+						value+=7
+						if(value>=target){
+							clearTimeout(timer);
+							value=target;
+						}
+						obj.style[attr] = value + 'px';
+						
+					}, 16);
+				}
+				btn.onclick = function(){
+					move(box1,'left',500)
+					move(box2,'top',500)
+				};
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="开始" />
+		<div id="box1"></div>
+		<div id="box2"></div>
+	</body>
+</html>

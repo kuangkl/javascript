@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<style>
+			div {
+				margin: 0;
+				padding: 0;
+				width: 184px;
+				height: 200px;
+				border: 1px solid #ccc;
+				display: none;
+			}
+			
+			.tab {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				width: 200px;
+				overflow: hidden;
+			}
+			
+			.tab li {
+				float: left;
+				width: 60px;
+				height: 30px;
+				background: #ccc;
+				color: #fff;
+				border: 1px solid #ddd;
+				text-align: center;
+				line-height: 30px;
+				cursor: pointer;
+			}
+			
+			.on {
+				display: block;
+			}
+			
+			.tab li.cur {
+				background: red;
+			}
+		</style>
+
+		<script>
+			$(document).ready(function() {
+				$(".tab li").mouseover(function() {
+					$(".tab li").eq($(this).index()).addClass("cur").siblings().removeClass('cur');
+					$("div").hide().eq($(this).index()).show();
+					//另一种方法: $("div").eq($(".tab li").index(this)).addClass("on").siblings().removeClass('on'); 
+
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<ul class="tab">
+			<li class="cur">最新</li>
+			<li>热门</li>
+			<li>新闻</li>
+		</ul>
+		<div class="on">11</div>
+		<div>22</div>
+		<div>33</div>
+	</body>
+
+</html>

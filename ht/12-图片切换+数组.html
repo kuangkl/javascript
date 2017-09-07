@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<script>
+			// 不可以循环切换
+			window.onload = function(){
+				var prev = document.getElementById('prev');
+				var next = document.getElementById('next');
+				var img1 = document.getElementById('img1');
+				var imgarr = [4, 1, 2];
+				var n = 0;
+				
+				next.onclick = function(){
+					n++;
+					if(n>imgarr.length-1){
+						n = imgarr.length-1;
+					}
+					img1.src = '../W3school/img/' + imgarr[n] + '.jpg';
+				}
+				
+				prev.onclick = function(){
+					n--;
+					if(n<0){
+						n = 0;
+					}
+					img1.src = '../W3school/img/' + imgarr[n] + '.jpg';
+				}
+			}
+		</script>-->
+		<script>
+			window.onload = function(){
+				var prev = document.getElementById('prev');
+				var next = document.getElementById('next');
+				var oimg = document.getElementById('img1');
+				var imgarr = [4, 2, 1];
+				var n = 0;
+				
+				next.onclick = function(){
+					n++;
+					if(n>imgarr.length-1){
+						n = 0;
+					}
+					oimg.src = '../W3school/img/' + imgarr[n] + '.jpg';
+				};
+				prev.onclick = function(){
+					n--;
+					if(n<0){
+						n = imgarr.length-1;
+					}
+					oimg.src = '../W3school/img/' + imgarr[n] + '.jpg';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="prev" id="prev" value="上一张" />
+		<input type="button" name="next" id="next" value="下一张" />
+		<img src="../W3school/img/4.jpg" id="img1"/>
+	</body>
+</html>

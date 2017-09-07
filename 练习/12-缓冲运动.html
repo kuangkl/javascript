@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			#box1 {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background: #f60;
+				top: 30px;
+				left: 600px;
+			}
+			
+			#box2 {
+				width: 1px;
+				height: 300px;
+				background: #000;
+				position: absolute;
+				left: 300px;
+				top: 0;
+			}
+		</style>
+		<script>
+		    /*
+			 * 1.设置一个startMove函数
+			 * 2.获取id
+			 * 3.开启一个定时器
+			 * 4.设置一个速度变量，速度等于目标点的距离减去盒子当前的位置除以一个数字值
+			 * 5.给速度做向上向下的取整（三木运算）
+			 * 6.盒子的
+			 * 6.给按钮添加点击事件
+			 */
+			
+			function startMove(){
+				
+				var box = document.getElementById('box1');
+				
+				setInterval(function(){
+					var speed = (300-box.offsetLeft)/10;
+					speed = speed>0?Math.ceil(speed):Math.floor(speed);
+					
+					box.style.left = box.offsetLeft + speed + 'px';
+				}, 30);
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="button" name="" id="" value="开始运动" onclick="startMove()" />
+		<div id="box1"></div>
+		<div id="box2"></div>
+	</body>
+
+</html>

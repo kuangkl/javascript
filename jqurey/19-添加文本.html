@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<style>
+		    *{
+		    	padding: 0;
+		    	margin: 0;
+		    }
+			.box{
+				width: 50px;
+				height: 150px;
+				border: 1px solid #DDDDDD;
+				position: absolute;
+				background: #f60;
+			}
+		</style>
+		<script>
+			function afterText(){
+				//var txt1="<b>I </b>";                    // 使用 HTML 创建元素
+				//var txt2=$("<i></i>").text("love ");     // 使用 jQuery 创建元素
+				//var txt3=document.createElement("big");  // 使用 DOM 创建元素
+				//txt3.innerHTML="jQuery!";
+				//$("p").after(txt1,txt2,txt3);          // 在图片后添加文本
+				
+				var txt1='<b>I</b>';
+				var txt2=$('<i></i>').text('love');
+				var txt3=document.createElement('big');
+				txt3.innerHTML='jquery';
+				$('p').after(txt1,txt2,txt3);
+            }
+		</script>
+	</head>
+	<body>
+		<p>这是一个段落</p>
+		<button onclick="afterText()">之后添加</button>
+	</body>
+</html>

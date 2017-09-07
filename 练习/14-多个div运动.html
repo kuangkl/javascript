@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+		/*
+		给函数设置两个参数
+		给当前的div设置一个定时器
+		给速度向上向下取整 
+		 
+		*/
+		
+		//var timer=null;
+		
+		function startMove(obj,Tiger){
+			
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function(){
+				
+				var speed=(Tiger-obj.offsetWidth)/6;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				
+				if(obj.offsetWidth==Tiger){
+					clearInterval(obj.timer);
+				}
+				else{
+					obj.style.width=obj.offsetWidth+speed+'px';
+				}
+			}, 30);
+		}
+		window.onload=function(){
+			
+			var oDiv=document.getElementsByTagName('div');
+			
+			for(var i=0; i<oDiv.length; i++){
+				
+				//oDiv[i].timer=null;
+				oDiv[i].onmouseover=function(){
+					startMove(this,400);
+				}
+				oDiv[i].onmouseout=function(){
+					startMove(this,100);
+				}
+			}
+		}
+		</script>
+		<!--<script>
+			window.onload=function(){
+				
+				var oDiv=document.getElementsByTagName('div');
+				
+				for(var i=0; i<oDiv.length; i++){
+					
+					oDiv[i].timer=null;
+					oDiv[i].onmouseover=function(){
+						startMove(this,400);
+					}
+					oDiv[i].onmouseout=function(){
+						startMove(this,100);
+					}
+				}
+			}
+			
+			//var timer=null;
+			function startMove(obj,Tiger){ // 给函数设置两个参数，
+				
+				clearInterval(obj.timer); // 先关闭定时器
+				
+				obj.timer=setInterval(function(){ // 当前的div运动时的定时器
+					
+					var speed=(Tiger-obj.offsetWidth)/6;
+					// 速度等于目标点减去当前的div的宽度除以6
+					speed=speed>0?Math.ceil(speed):Math.floor(speed); // 给速度向上向下取整
+					
+					if(obj.offsetWidth==Tiger){ // div运动到目标点的时候，关闭
+						clearInterval(obj.timer);
+					}
+					else{
+						obj.style.width=obj.offsetWidth+speed+'px'; // 
+					}
+				}, 30);
+			}
+		</script>-->
+		<style>
+			div{
+				width: 100px;
+				height: 50px;
+				background: #f60;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

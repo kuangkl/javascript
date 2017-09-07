@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 40px;
+				left: 0;
+			}
+		</style>
+		<script>
+			/*
+			 * 1.设置一个空的变量
+			 * 2.设置一个startMove函数，传一个参数
+			 * 3.关闭下一个定时器
+			 * 4.开启一个定时器
+			 * 5.判断div是否到达目标点，到达目标点就关闭定时器
+			 */
+			
+			var timer = null;
+			function startMove(Tiger){
+				
+				var oDiv = document.getElementById('box');
+				
+				clearInterval(timer);
+				timer = setInterval(function(){
+					
+					var speed = 5;
+					if(oDiv.offsetLeft==Tiger){
+						clearInterval(timer);
+					}
+					else{
+						oDiv.style.left = oDiv.offsetLeft + speed +'px';
+					}
+				}, 30);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="开始运动" onclick="startMove(300)" />
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

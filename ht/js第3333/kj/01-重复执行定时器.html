@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #f00;
+				font-size: 50px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			/*
+			 * setInterval重复执行一件事情
+			 * setInterval(function(){
+			 *     要执行的代码
+			 * },时间)
+			 */
+			window.onload = function(){
+				
+				var box = document.getElementById("box");
+				var i = 0; // 设置变i等于0，方便后面的累加
+				
+				// 点击box
+				box.onclick = function(){
+					setInterval(fn, 1000); // 开启定时器
+				}
+				function fn(){
+					i++; // 累加
+					box.innerHTML = i; // 把i的值赋给box
+				}
+				
+			}
+		</script>
+		<div id="box"></div>
+	</body>
+</html>

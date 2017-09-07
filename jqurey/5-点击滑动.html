@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<!--<script>
+			$(document).ready(function(){
+				$('button').click(function(){
+					$('.box3').fadeToggle('slow');
+				})
+			})
+		</script>-->
+		<script>
+			$(document).ready(function() {
+				$(this).click(function() {
+					$('.con').slideToggle('slow');
+				});
+			});
+		</script>
+		
+	</head>
+
+	<body>
+		<div class="box">
+			<p>点击这里，隐藏/显示面板 <span>></span></p>
+			<div class="con" style="display: none;">一寸光阴一寸金，因此，我们为您提供快捷易懂的学习内容。<br> 在这里，您可以通过一种易懂的便利的模式获得您需要的任何知识。
+			</div>
+		</div>
+
+	</body>
+
+</html>

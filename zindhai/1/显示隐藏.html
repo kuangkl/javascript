@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+
+<!--<script>
+function zhanshi()
+{
+	if(document.getElementById('div1').style.display=='block')
+	{
+		document.getElementById('div1').style.display='none';
+	}
+	else
+	{
+		document.getElementById('div1').style.display='block';
+	}
+}
+</script>-->
+<style>
+.ant{ width:66px; line-height:30px; cursor:pointer; background:#fqfqfq;}
+#div1{ width:100px; height:200px; background:#000; display:none;}
+</style>
+<script>
+function toup()
+{
+	var oDiv=document.getElementById('div1');
+	if(oDiv.style.display=='block')
+	{
+		oDiv.style.display='none';
+	}
+	else
+	{
+		oDiv.style.display='block';
+	}
+}
+</script>
+<body>
+<div class="ant" onclick="toup()">显示隐藏</div>
+<div id="div1"></div>
+</body>
+</html>

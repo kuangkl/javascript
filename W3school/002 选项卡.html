@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#tab-ul{
+				height: 30px;
+				width: 200px;
+			}
+			#tab-ul li{
+				float: left;
+				list-style: none;
+			}
+			#tab-ul li.hover{
+				background: #f60;
+			}
+			#content li{
+				width: 200px;
+				height: 200px;
+				border: 1px solid #ddd;
+				display: none;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var oDiv1=document.getElementById('tab-ul');
+				var oLi=oDiv1.getElementsByTagName('li');
+				var oDiv2=document.getElementById('content');
+				var aLi=oDiv2.getElementsByTagName('li');
+				
+				for(var i=0; i<oLi.length; i++){
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="tab-ul">
+			<ul>
+				<li class="hover">选项一</li>
+				<li>选项二</li>
+				<li>选项三</li>
+			</ul>
+		</div>
+		<div id="content">
+			<ul>
+				<li style="display: block;">选项一</li>
+				<li>选项二</li>
+				<li>选项三</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>

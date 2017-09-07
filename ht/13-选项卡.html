@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 100px;
+				border: 1px solid #000;
+				display: none;
+			}
+		</style>
+		<!--<script>
+			window.onload = function(){
+				var otit = document.querySelectorAll('input');
+				var ocon = document.querySelectorAll('div');
+				
+				for(var i=0; i<otit.length; i++){
+					otit[i].index = i;
+					otit[i].onclick = function(){
+						for(var i=0; i<otit.length; i++){
+							otit[i].style.background = '';
+							ocon[i].style.display = 'none';
+						}
+						this.style.background = '#f60';
+						ocon[this.index].style.display = 'block';
+					}
+				}
+			}
+		</script>-->
+		<script>
+			window.onload = function(){
+				var inputs = document.querySelectorAll('input');
+				var divs = document.querySelectorAll('div');
+				
+				for(var i=0; i<inputs.length; i++){
+					
+					inputs[i].index = i;
+					inputs[i].onclick = function(){
+						for(var i=0; i<inputs.length; i++){
+							inputs[i].style.background = '';
+							divs[i].style.display = 'none'
+						}
+						this.style.background = '#f60';
+						divs[this.index].style.display = 'block';
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="按钮1" style="background: #f60;" />
+		<input type="button" name="" id="" value="按钮2" />
+		<input type="button" name="" id="" value="按钮3" />
+		<div style='display: block;'>内容一</div>
+		<div>内容二</div>
+		<div>内容三</div>
+	</body>
+</html>

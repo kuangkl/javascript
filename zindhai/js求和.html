@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function ()
+{
+	var oText1=document.getElementById('text1');
+	var oText2=document.getElementById('text2');
+	var oBtn=document.getElementById('btn');
+	
+	oBtn.onclick=function ()
+	{
+		var n1=parseInt(oText1.value);
+		var n2=parseInt(oText2.value);
+		
+		if(isNaN(n1))
+		{
+			alert('您输入的第一段数据有误。');
+		}
+		else if(isNaN(n2))
+		{
+			alert('您输入的2段数据有误。');
+		}
+		else
+		{
+			alert(n1+n2);
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="text" id="text1" />
+<input type="text" id="text2" />
+<input type="button" value="求和" id="btn" />
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+
+	<head>
+		<meta charset="UTF-8"/>
+		<script type="text/javascript">
+		    function above(){
+		    	var oTab1=document.getElementById('myTable');
+		    	oTab1.frame='above';
+		    }
+		    function below(){
+		    	var oTab2=document.getElementById('myTable');
+		    	oTab2.frame='below';
+		    }
+		</script>
+	</head>
+
+	<body>
+
+		<table id="myTable">
+			<tr>
+				<td>100</td>
+				<td>200</td>
+			</tr>
+			<tr>
+				<td>300</td>
+				<td>400</td>
+			</tr>
+		</table>
+		<br />
+		<input type="button" onclick="above()" value="显示上边框">
+		<input type="button" onclick="below()" value="显示下边框">
+
+	</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background: #f60;
+				top: 50px;
+				left: 0;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				
+				var btn1 = document.getElementById("btn1");
+				var btn2 = document.getElementById("btn2");
+				var timer;
+				
+				btn1.onclick = function(){
+					
+					var l = parseInt(getComputedStyle(box).left);
+					var t = parseInt(getComputedStyle(box).top);
+					var w = parseInt(getComputedStyle(box).width);
+					var h = parseInt(getComputedStyle(box).height);
+					
+					clearTimeout(timer);
+					timer = setInterval(function(){
+						
+						l++;
+						t++;
+						w++;
+						h++;
+						
+						box.style.left = l + 'px';
+						box.style.top = t + 'px';
+						box.style.width = w + 'px';
+						box.style.height = h + 'px';
+						
+					}, 16);
+				}
+				
+				btn2.onclick = function(){
+					clearTimeout(timer);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="btn1" id="btn1" value="开始" />
+		<input type="button" name="btn2" id="btn2" value="停止" />
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

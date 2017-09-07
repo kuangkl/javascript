@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 * 给数组的末尾添加数据
+			 * 数组.push(element1,element2...)
+			 */
+			
+			var color1 = ['red','green','blue'];
+			var len1 = color1.push('black');
+			
+			console.log(color1);
+			console.log(len1);
+			
+			/*
+			 * 给数组的前面添加数据
+			 * 数组.unshift(element1,element2...)
+			 */
+			var color2 = ['red','blue'];
+			var len2 = color2.unshift('orange');
+			
+			console.log(color2);
+			console.log(len2);
+			
+			/*
+			 * 删除数组最后一个数据
+			 * 
+			 */
+			var color3 = ['red','green'];
+			var len3 = color3.pop();
+			
+			console.log(color3); // ['red'];
+			console.log(len3); // green
+			
+			/*
+			 * 删除数组最开始的一个数据
+			 */
+			var color4 = ['red','black','org'];
+			var len4 = color4.shift();
+			
+			console.log(color4);  // ['black','org']
+			console.log(len4); // red
+			
+			
+			
+		</script>
+	</body>
+</html>

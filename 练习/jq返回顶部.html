@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+
+		<style>
+			.arrow_box {
+				width: 300px;
+				height: 200px;
+				background: #f60;
+				position: relative;
+				border-radius: 8px;
+				border: 2px solid #000;
+			}
+			
+			.arrow_box:after {
+				position: absolute;
+				content: '';
+				border: solid transparent;
+				border-left-color: #f60;
+				border-width: 30px;
+				margin-top: -30px;
+				width: 0;
+				height: 0;
+				left: 100%;
+				top: 50%;
+			}
+						
+			.back-top {
+				position: fixed;
+				right: 0;
+				bottom: 50px;
+				background: #f60;
+				height: 32px;
+				width: 32px;
+			}
+		</style>
+
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				var $backToTop = $(".back-top");
+				/* 隐藏回顶部按钮 */
+				$backToTop.hide();
+
+				$(window).on('scroll', function() {
+					if($(this).scrollTop() > 100) { /* 返回顶部按钮将在用户向下滚动100像素后出现 */
+						$backToTop.fadeIn();
+					} else {
+						$backToTop.fadeOut();
+					}
+				});
+
+				$backToTop.on('click', function(e) {
+					$("html, body").animate({
+						scrollTop: 0
+					}, 500);
+				});
+			})
+		</script>
+	</head>
+
+	<body style="height:2000px;">
+		<div class="arrow_box"></div>
+		
+		<div class="back-top"></div>
+	</body>
+
+</html>

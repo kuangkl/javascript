@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<!--<script>
+			$(document).ready(function(){ // 在网页执行完成之后，执行jQuery里面的代码
+				$('button').click(function(){  // click 是点击事件
+					$('.test').hide();
+				})
+			})
+		</script>-->
+		<!--<script>
+			$(document).ready(function(){
+				$('button').click(function(){
+					$('*').hide();
+				})
+			})
+		</script>-->
+		<!--<script>
+			$(document).ready(function(){
+				$('button').click(function(){
+					$(this).hide();
+				})
+			})
+		</script>-->
+		<!--<script>
+			$(document).ready(function(){
+				$('button').click(function(){
+					$('p.test').hide();
+				})
+			})
+		</script>-->
+		<!--<script>
+			$(document).ready(function(){
+				$('button').click(function(){
+					$('p:first').hide();
+				})
+			})
+		</script>-->
+		<!--<script>
+			$(document).ready(function(){
+				$('button').click(function(){
+					$('ul li:first').hide();
+				})
+			})
+		</script>-->
+		<script>
+			$(document).ready(function(){
+				$('button').click(function(){
+					$('ul li:first-child').hide();
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<h2 class="test">我是标题</h2>
+		<p class="test">这是第一个段落</p>
+		<p>这是第二个段落</p>
+		<p>这是第三个段落</p>
+		<ul>
+			<li>111111</li>
+			<li>222222</li>
+			<li>333333</li>
+		</ul>
+		<ul>
+			<li>444444</li>
+			<li>555555</li>
+			<li>666666</li>
+		</ul>
+		<button>按钮</button>
+	</body>
+</html>

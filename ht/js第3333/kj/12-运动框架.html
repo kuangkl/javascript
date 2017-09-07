@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/move.js"></script>
+		<script>
+			window.onload = function(){
+				
+				var btn = document.getElementById("btn");
+				var box = document.getElementById("box");
+				
+				btn.onclick = function(){
+					move(box,{left:300},1000,'linear',function(){
+						move(box,{top:300},1000,'linear')
+					});
+				}
+			}
+		</script>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background: #f00;
+				position: absolute;
+				left: 0;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="开始" />
+		<div id="box"></div>
+	</body>
+</html>

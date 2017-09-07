@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		
+		<style>
+		    *{
+		    	padding: 0;
+		    	margin: 0;
+		    }
+			.box{
+				width: 100%;
+				height: 50px;
+				border: 1px solid #DDDDDD;
+				position: absolute;
+				background: #f60;
+				display: none;
+			}
+			button{
+				display: block;
+			}
+		</style>
+		
+		<!--<script>
+			$(document).ready(function(){
+				$('button').click(function(){
+					$('.box').animate({
+						left:'240px',
+						height:'+=150px',
+						width:'+=150px'
+					});
+				});
+			});
+		</script>-->
+		<script>
+			$(document).ready(function(){
+				$('button').click(function(){
+					$('button').animate({
+						height:'toggle'
+					});
+					$('.box').animate({
+						width:'toggle'
+					})
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button>ant</button>
+		<div class="box">sdf</div>
+	</body>
+</html>

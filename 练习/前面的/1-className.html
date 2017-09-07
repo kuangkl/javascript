@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 200px;
+				height: 100px;
+				border: 1px solid #ddd;
+			}
+			.box{
+				background: #f60;
+				border: 1px solid #f00;
+			}
+		</style>
+		<script>
+			/*
+			 * 1.设置一个tobox函数
+			 * 2.获取div的id
+			 * 3.给按钮添加点击事件
+			 */
+			function tobox(){
+				var box = document.getElementById('box'); // 获取div的id
+				box.className = 'box'; // 给div添加class属性
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="按钮" onclick="tobox()" />
+		<div id="box"></div>
+	</body>
+</html>

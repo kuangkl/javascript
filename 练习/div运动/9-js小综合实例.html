@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 300px;
+				height: 200px;
+				background: #f5f5f5;
+				border: 1px solid #DCDCDC;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var oDiv=document.getElementById('box');
+				var oTxt1=document.getElementById('txt1');
+				var oTxt2=document.getElementById('txt2');
+				var oBtn=document.getElementById('btn1');
+				
+				oBtn.onclick=function(){
+					oDiv.innerHTML=oDiv.innerHTML + oTxt1.innerHTML + oTxt2.value + '<br>';
+					oTxt2.value='';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+		<span id="txt1">张三说：</span><input type="text" id="txt2" >
+		<input type="button" id="btn1" value="按钮">
+	</body>
+</html>

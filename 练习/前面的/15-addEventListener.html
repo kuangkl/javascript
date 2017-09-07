@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="按钮" />
+		<p id="pp"></p>
+		<script>
+			document.getElementById('btn').addEventListener('click',displaytxt);
+			function displaytxt(){
+				document.getElementById('pp').innerHTML=Date();
+			}
+		</script>
+	</body>
+</html>

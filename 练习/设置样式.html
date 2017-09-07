@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background: #F1F1F1;
+			}
+			#box{
+				width: 100px;
+				height: 100px;
+				background: #fff;
+				border: 3px solid #dcdcdc;
+			}
+			#setup{
+				background: #006666;
+				color: #fff;
+			}
+			#pop{
+				width: 300px;
+				height: 200px;
+				border: 10px solid #dcdcdc;
+				position: absolute;
+				right: 20px;
+				bottom: 200px;
+				background: #fff;
+				display: none;
+				z-index: 9;
+			}
+			#pop p{
+				height: 30px;
+				padding-left: 30px;
+			}
+			#pop span{
+				width: 30px;
+				text-align: center;
+				display: inline-block;
+				background: #eee;
+				padding: 10px;
+				margin-left: 5px;
+				cursor: pointer;
+			}
+			#red{
+				background: red;
+			}
+			#org{
+				background: orangered;
+			}
+			#blue{
+				background: blue;
+			}
+			#recovery, #make-sure{
+				width: 40px;
+				height: 20px;
+				display: inline-block;
+				background: #C3C3C3;
+				color: #fff;
+				text-decoration: none;
+				text-align: center;
+				margin-right: 10px;
+			}
+			#make-sure{
+				background: #FF4500;
+			}
+			#pop-layer{
+				width: 100%;
+				height: 100%;
+				background: #000000;
+				opacity: .6;
+				filter: alpha(opacity:.6);
+				position: fixed;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var oDiv=document.getElementById('box');
+				var oSetup=document.getElementById('setup');
+				
+				var oPop=document.getElementById('pop');
+				var oPoplayer=document.getElementById('pop-layer');
+				
+				var oRed=document.getElementById('red');
+				var oOrg=document.getElementById('org');
+				var oBlue=document.getElementById('blue');
+				
+				var oW2=document.getElementById('w2');
+				var oW3=document.getElementById('w3');
+				var oW4=document.getElementById('w4');
+				
+				var oH2=document.getElementById('h2');
+				var oH3=document.getElementById('h3');
+				var oH4=document.getElementById('h4');
+				
+				var oRecovery=document.getElementById('recovery');
+				var oMakesure=document.getElementById('make-sure');
+				
+				oSetup.onclick=function(){
+					oPop.style.display='block';
+					oPoplayer.style.display='block';
+				}
+				
+				oRed.onclick=function(){
+					oDiv.style.background='red';
+				}
+				oOrg.onclick=function(){
+					oDiv.style.background='orangered';
+				}
+				oBlue.onclick=function(){
+					oDiv.style.background='blue';
+				}
+				
+				oW2.onclick=function(){
+					oDiv.style.width='200px';
+				}
+				oW3.onclick=function(){
+					oDiv.style.width='300px';
+				}
+				oW4.onclick=function(){
+					oDiv.style.width='400px';
+				}
+				
+				oH2.onclick=function(){
+					oDiv.style.height='200px';
+				}
+				oH3.onclick=function(){
+					oDiv.style.height='300px';
+				}
+				oH4.onclick=function(){
+					oDiv.style.height='400px';
+				}
+				
+				oRecovery.onclick=function(){
+					oDiv.style.width='100px';
+					oDiv.style.height='100px';
+					oDiv.style.background='#fff';
+				}
+				oMakesure.onclick=function(){
+					oPop.style.display='none';
+					oPoplayer.style.display='none';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<p>给下面的div设置样式 <span id="setup">点击设置</span></p>
+			<div id="box">改变我的样式</div>
+		</div>
+		<div id="pop">
+			<p>改变颜色 <span id="red">红</span><span id="org">黄</span><span id="blue">蓝</span></p>
+			<p>改变宽度 <span id="w2">200</span><span id="w3">300</span><span id="w4">400</span></p>
+			<p>改变高度 <span id="h2">200</span><span id="h3">300</span><span id="h4">400</span></p>
+			<p><a href="#" id="recovery">恢复</a><a href="#" id="make-sure">确定</a></p>
+		</div>
+		<div id="pop-layer"></div>
+	</body>
+</html>

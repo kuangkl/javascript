@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				width: 200px;
+				height: 200px;
+				background: red;
+				filter: alpha(opacity: 30);
+				opacity: 0.3;
+			}
+		</style>
+		
+		<script>
+		    /*
+		     * 1、设置一个alpha变量存储透明度用
+		     * 2、设置一个空的timer变量，存储定时器用
+		     * 3、设置一个函数startMove，给函数设置一个参数Tiger
+		     * 4、开一个定时器
+		     * 5、设置一个变量速度speed，判断速度的正负
+		     * 6、判断速度是否到达目标点
+		     * 7、添加鼠标移入移出
+		     * 8、给startMove传入参数
+		     */
+			var alpha = 30;
+			var timer = null;
+			
+			function startMove(Tiger){
+				
+				var oBox = document.getElementById('box');
+				
+				clearInterval(timer); // 关闭一个定时器
+				timer = setInterval(function(){
+					
+					var speed = 0; // 把速度当做一个变量，再判断速度的正负
+					if(alpha>Tiger){
+						speed = -10;
+					}
+					else{
+						speed = 10;
+					}
+					
+					if(alpha==Tiger){ // 判断alpha是否到达目标点
+						clearInterval(timer);
+					}
+					else{
+						alpha += speed; // ？？？
+						oBox.style.opacity = alpha/100; 
+						// oBox的透明度等于alpha除以100（兼容谷歌）
+						oBox.style.filter = 'alpha(opacity:' + speed + 'px'; // 兼容ie
+					}
+				}, 30);
+			}
+			
+			window.onload = function(){ // 鼠标移入移出
+				
+				var oBox = document.getElementById('box');
+				
+				oBox.onmouseover = function(){
+					startMove(100); // 给函数startMove传一个参数100
+				}
+				oBox.onmouseout = function(){
+					startMove(30); // 给函数startMove传一个参数30
+				}
+			}
+		</script>
+		
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

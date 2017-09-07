@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>无标题文档</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#div1 {
+				width: 712px;
+				height: 108px;
+				margin: 100px auto;
+				position: relative;
+				background: red;
+				overflow: hidden;
+			}
+			
+			#div1 ul {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			#div1 ul li {
+				float: left;
+				width: 178px;
+				height: 108px;
+				list-style: none;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var oDiv = document.getElementById('div1');
+				var oUl = oDiv.getElementsByTagName('ul')[0];
+				var aLi = oUl.getElementsByTagName('li');
+
+				var speed = -2; //控制速度的
+
+				//oUl.innerHTML=oUl.innerHTML+oUl.innerHTML; 克隆一个ul
+				oUl.innerHTML += oUl.innerHTML;
+				
+				//设置ul的宽度是任意一个图片的宽度乘以li的length(px)
+				oUl.style.width = aLi[0].offsetWidth * aLi.length + 'px';
+
+				function move() { //
+					if(oUl.offsetLeft < -oUl.offsetWidth / 2) { //当ul滚动offsetLeft小于ul宽度一半的时候
+						oUl.style.left = '0'; //把ul的left拉回到0(重新滚动)
+					}
+					if(oUl.offsetLeft > 0) { //
+						oUl.style.left = -oUl.offsetWidth / 2 + 'px';
+					}
+					oUl.style.left = oUl.offsetLeft + speed + 'px'; 
+				}
+				var timer = setInterval(move, 30); //这是一个定时器
+
+				oDiv.onmouseover = function() {
+					clearInterval(timer); //鼠标经过是 定时器关闭
+				};
+
+				oDiv.onmouseout = function() {
+					timer = setInterval(move, 30); //鼠标离开定时器运行
+				};
+
+				var aa = document.getElementsByTagName('a');
+				aa[0].onclick = function() { //点击第一个a时，向左滚动
+					speed = -2;
+				};
+				aa[1].onclick = function() { //点击第二个a时，向右滚动
+					speed = 2;
+				};
+			};
+		</script>
+	</head>
+
+	<body>
+		<a href="javascript:;">向左走</a>
+		<a href="javascript:;">向右走</a>
+		<div id="div1">
+			<ul>
+				<li><img src="img2/1.jpg" /></li>
+				<li><img src="img2/2.jpg" /></li>
+				<li><img src="img2/3.jpg" /></li>
+				<li><img src="img2/4.jpg" /></li>
+			</ul>
+		</div>
+	</body>
+
+</html>

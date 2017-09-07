@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<p id="p1">这是一个段落</p>
+			<p>这是另一个段落</p>
+		</div>
+		<script>
+			/*
+			 * 1.获取父元素的id
+			 * 2.获取子元素的id
+			 * 3.用removechild删除子元素
+			 */
+			var x = document.getElementById('box');
+			var y = document.getElementById('p1');
+			x.removeChild(y);
+		</script>
+	</body>
+</html>

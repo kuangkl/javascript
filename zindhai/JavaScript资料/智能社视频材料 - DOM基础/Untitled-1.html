@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>DIV层切换示例</title>
+<script language="JavaScript" type="text/javascript"> 
+function ChangeDiv(divId,divName,DivCount) 
+{ 
+ for(i=0;i<=DivCount;i++)
+ {
+     document.getElementById(divName+i).style.display="none"; 
+ }
+ document.getElementById(divName+divId).style.display="block"; 
+} 
+</script> 
+</head>
+<body>
+<div class="update">
+文字内容        
+    <div class="order">
+    <span class="up" title="排序1"></span>
+    <span class="down" title="排序2"></span>
+   </div>            
+</div>
+<style>
+.update{position:relative; display:inline-block; *zoom:1; *display:inline; *overflow:hidden; padding-right:25px;}
+ .order{position:absolute; top:-2px; right:0;}
+</style>
+</body>
+</html> 

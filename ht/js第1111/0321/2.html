@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#btn{
+				text-align: center;
+				padding: 20px 0;
+			}
+			#btn input{
+				width: 100px;
+				height: 30px;
+				background: #927878;
+				border: 1px solid #605656;
+				color: #fff;
+				font-size: 14px;
+				cursor: pointer;
+			}
+			#imgWrap{
+				text-align: center;
+				width: 870px;
+				margin: 0 auto;
+			}
+			#fistImg{
+				width: 520px;
+				height: 280px;
+				border: 5px solid #ccc;
+				position: relative;
+				float: left;
+			}
+			#secondImg{
+				width: 320px;
+				height: 280px;
+				overflow: hidden;
+				border: 5px solid #ccc;
+				position: relative;
+				float: right;
+			}
+			.num{
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				color: #fff;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				background: rgba(0,0,0,0.7);
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var fistImgNum=document.getElementById("fistImgNum");
+				var secondImgNum=document.getElementById("secondImgNum");
+				var fistImg=document.getElementById("fistImg");
+				var secondImg=document.getElementById("secondImg");
+				
+				var leftImg=['456fgf','34435','sadsd','sdbg','sdfsdfcc'];
+				var rightImg=['we45345','xcv32b','ktytyurt23'];
+				
+				var fImg=document.getElementById("fImg");
+				var sImg=document.getElementById("sImg");
+				
+				var btn1=document.getElementById("btn1");
+				var btn2=document.getElementById("btn2");
+				
+				var n1=0;		//左边图片的索引
+				var n2=0;		//右边图片的索引
+				
+				//初始化数字
+				fistImgNum.innerHTML=n1+1+'/'+leftImg.length;
+				secondImgNum.innerHTML=n2+1+'/'+rightImg.length;
+				
+				//给左边图片添加点击事件
+				fistImg.onclick=function(){
+					n1++;
+					
+					if(n1==leftImg.length){
+						//这个条件成立说明图片已经超出去了，要让它回到0
+						n1=0;
+					}
+					
+					fistImgNum.innerHTML=n1+1+'/'+leftImg.length;		//改数字
+					fImg.src='img3/'+leftImg[n1]+'.jpg';
+				};
+				
+				//给右边图片添加点击事件
+				secondImg.onclick=function(){
+					n2++;
+					
+					if(n2==rightImg.length){
+						//这个条件成立说明图片已经超出去了，要让它回到0
+						n2=0;
+					}
+					
+					secondImgNum.innerHTML=n2+1+'/'+rightImg.length;		//改数字
+					sImg.src='img3/'+rightImg[n2]+'.jpg';
+				};
+				
+				//上一组按钮点击
+				btn1.onclick=function(){
+					//让左边图片变化
+					n1--;
+					
+					if(n1==-1){
+						n1=leftImg.length-1;
+					}
+					
+					fistImgNum.innerHTML=n1+1+'/'+leftImg.length;		//改数字
+					fImg.src='img3/'+leftImg[n1]+'.jpg';
+					
+					
+					//让右边的图片变化
+					n2--;
+					if(n2==-1){
+						n2=rightImg.length-1;
+					}
+					secondImgNum.innerHTML=n2+1+'/'+rightImg.length;		//改数字
+					sImg.src='img3/'+rightImg[n2]+'.jpg';
+				};
+				
+				//下一组按钮点击
+				btn2.onclick=function(){
+					//让左边的图片变化
+					n1++;
+					
+					if(n1==leftImg.length){
+						//这个条件成立说明图片已经超出去了，要让它回到0
+						n1=0;
+					}
+					
+					fistImgNum.innerHTML=n1+1+'/'+leftImg.length;		//改数字
+					fImg.src='img3/'+leftImg[n1]+'.jpg';
+					
+					//让右边的图片变化
+					n2++;
+					
+					if(n2==rightImg.length){
+						//这个条件成立说明图片已经超出去了，要让它回到0
+						n2=0;
+					}
+					
+					secondImgNum.innerHTML=n2+1+'/'+rightImg.length;		//改数字
+					sImg.src='img3/'+rightImg[n2]+'.jpg';
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<div id="btn">
+			<input type="button" id="btn1" value="上一组" />
+			<input type="button" id="btn2" value="下一组" />
+		</div>
+		<div id="imgWrap">
+			<div id="fistImg">
+				<img id="fImg" src="img3/456fgf.jpg" alt=""/>
+				<div id="fistImgNum" class="num"></div>
+			</div>
+			<div id="secondImg">
+				<img id="sImg" src="img3/we45345.jpg"/>
+				<div id="secondImgNum" class="num"></div>
+			</div>
+		</div>
+	</body>
+</html>

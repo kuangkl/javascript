@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#small{
+				width: 300px;
+				height: 300px;
+				position: relative;
+				float: left;
+				margin-right: 10px;
+			}
+			#small img{
+				width: 300px;
+			}
+			#small div{
+				width: 100px;
+				height: 100px;
+				background: rgba(255,255,0,0.7);
+				position: absolute;
+				left: 0;
+				top: 0;
+				cursor: move;
+				display: none;
+			}
+			#big{
+				position: relative;
+				float: left;
+				width: 340px;
+				height: 340px;
+				overflow: hidden;
+				display: none;
+			}
+			#big img{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<script src="js/jquery-3.1.0.js"></script>
+		<script>
+			$(function(){
+				var mask=$('#small div');
+				$('#small').mouseover(function(){
+					mask.css('display','block');
+					$('#big').css('display','block');
+				}).mouseout(function(){
+					mask.css('display','none');
+					$('#big').css('display','none');
+				}).mousemove(function(ev){
+					var l=ev.clientX-$(this).offset().left-mask.width()/2;
+					var t=ev.clientY-$(this).offset().top-mask.height()/2;
+					
+					if(l<0){
+						l=0;
+					}else if(l>$(this).width()-mask.width()){
+						l=$(this).width()-mask.width();
+					}
+					
+					if(t<0){
+						t=0;
+					}else if(t>$(this).height()-mask.height()){
+						t=$(this).height()-mask.height();
+					}
+					
+					var pecW=l/($(this).width()-mask.width());
+					var pecH=t/($(this).height()-mask.height());
+					
+					mask.css({'left':l,'top':t});
+					
+					$('#big img').css({
+						'left':pecW*($('#big').width()-$('#big img').width()),
+						'top':pecH*($('#big').height()-$('#big img').height())
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="small">
+			<img src="img/big.jpg" alt="" />
+			<div></div>
+		</div>
+		<div id="big"><img src="img/big.jpg" alt="" /></div>
+	</body>
+</html>

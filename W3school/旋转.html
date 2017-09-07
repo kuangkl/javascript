@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.jqsy-fc {
+				position: relative;
+			}
+			.rotate-img{
+				position: absolute;
+				-webkit-animation: change 5s linear infinite;
+				animation: change 5s linear infinite;
+			}
+			@-webkit-keyframes change{
+				0%{
+					-webkit-transform: rotate(0deg);
+				}
+				50%{
+					-webkit-transform: rotate(180deg);
+				}
+				100%{
+					-webkit-transform: rotate(360deg);
+				}
+			}
+			@keyframes change{
+				0%{
+					-webkit-transform: rotate(0deg);
+				}
+				50%{
+					-webkit-transform: rotate(180deg);
+				}
+				100%{
+					-webkit-transform: rotate(360deg);
+				}
+			}
+			/*.rotate-img {
+				position: absolute;
+				-webkit-animation: change 5s linear infinite;
+				-moz-animation: change 5s linear infinite;
+				;
+				-ms-animation: change 5s linear infinite;
+				;
+				animation: change 5s linear infinite;
+			}
+			
+			@-webkit-keyframes change {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				50% {
+					-webkit-transform: rotate(180deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+				}
+			}
+			
+			@-moz-keyframes change {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				50% {
+					-webkit-transform: rotate(180deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+				}
+			}
+			
+			@-ms-keyframes change {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				50% {
+					-webkit-transform: rotate(180deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+				}
+			}
+			
+			@keyframes change {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				50% {
+					-webkit-transform: rotate(180deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+				}
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<div class="jqsy-fc" id="test">
+			<img src="img.png" class="rotate-img">
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 300px;
+				height: 200px;
+				background: #f60;
+				float: left;
+				margin: 10px;
+				filter: alpha(opacity:30);
+				opacity: .3;
+			}
+		</style>
+		<!--
+		 * 1.设置一个startMove函数，传两个参数obj、Tiger
+		 * 2.开一个定时器
+		 * 3.给速度判断正负,给速度做向上向下的取整
+		 * 4.判断alpha是否到达目标点
+		 * 5.设置一个变量alpha存储透明度
+		-->
+		
+		<script>
+			window.onload=function(){
+				
+				var oDiv=document.getElementsByTagName('div');
+				
+				for(var i=0; i<oDiv.length; i++){
+					
+					oDiv[i].alpha=30; //给没个div都设置一个alpha
+					oDiv[i].onmouseover=function(){
+						startMove(this,100);
+					}
+					oDiv[i].onmouseout=function(){
+						startMove(this,30);
+					}
+				}
+			}
+			
+			//var alpha=30;
+			function startMove(obj,Tiger){
+				
+				clearInterval(obj.timer); // 关闭当前的
+				obj.timer=setInterval(function(){
+					
+					var speed=(Tiger-obj.alpha)/6;
+					// 速度等于目标点减去当前div的alpha再除以6
+					speed=speed>0?Math.ceil(speed):Math.floor(speed); // 给速度做向上向下的取整
+					
+					if(obj.alpha==Tiger){
+						clearInterval(obj.timer); //
+					}
+					else{
+						obj.alpha=obj.alpha+speed; // 当前的div的alpha等于本身加上速度
+						obj.style.opacity=obj.alpha/100;
+						// 兼容谷歌
+						obj.style.filter='alpha(opacity:' + obj.alpha + ')'; // 兼容IE的
+					}
+				}, 30);
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

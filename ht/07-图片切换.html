@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				
+				var oimg = document.getElementById('oimg');
+				var onoff = true;
+				
+				oimg.onclick = function(){
+					if(onoff){
+						oimg.src = 'img/1.jpg';
+						onoff = false;
+					}
+					else{
+						oimg.src = 'img/2.jpg';
+						onoff = true;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<img id="oimg" src="img/2.jpg" width="200px" height="300px"/>
+	</body>
+</html>

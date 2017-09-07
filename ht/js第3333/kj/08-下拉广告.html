@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#ad{
+				background: url(../img/big.jpg);
+			}
+		</style>
+		<script src="../js/move.js"></script>
+		<script>
+			/*
+			 * 步骤
+			 * 	1、让div的高度从0变化到250（setInterval）
+			 * 	2、到达指定的高度后需要停止3秒钟（setTimeout）
+			 * 	3、让div的高度从250变化到100（setInterval）
+			 * 	4、运动完成以后要清除定时器
+			 */
+			window.onload = function(){
+				
+				var oAd = document.getElementById("ad");
+				var t1;
+				var t2;
+				
+				var h = parseInt(getComputedStyle(oAd).height);
+				
+				t1 = setInterval(function(){
+					h++;
+					oAd.style.height = h + 'px';
+					if(h==250){
+						clearTimeout(t1);
+						t2 = setTimeout(function(){
+							t1 = setInterval(function(){
+								h--;
+								oAd.style.height = h + 'px';
+								if(h==100){
+									clearTimeout(t1);
+								}
+							})
+						},3000);
+					}
+					
+				}, 16);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="ad">
+			
+		</div>
+	</body>
+</html>

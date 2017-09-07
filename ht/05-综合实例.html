@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 240px;
+				height: 200px;
+				border: 1px solid #ddd;
+				background: #f5f5f5;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var box = document.getElementById('box');
+				var txt = document.getElementById('txt');
+				var btn = document.getElementById('btn');
+				var str = document.getElementById('str');
+				
+				btn.onclick = function(){
+					if(txt.value == ''){
+						alert('......')
+					}
+					else{
+						box.innerHTML = box.innerHTML + str.innerHTML + txt.value + '<br>';
+						txt.value = '';
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+		<strong id="str">张三</strong>
+		<input type="text" name="txt" id="txt" value="" />
+		<input type="button" name="btn" id="btn" value="按钮" />
+	</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		    body,dl,dt,dd{
+		    	padding: 0;
+		    	margin: 0;
+		    }
+
+			#ft{
+				width: 240px;
+				height: 400px;
+				border: 8px solid #dedede;
+				border-radius: 8px;
+				background: #fff;
+				padding: 8px;
+				margin: 50px auto;
+			}
+			#box{
+				height: 375px;
+				background: #fff;
+				overflow: hidden;
+				overflow-y:scroll;
+			}
+			#box-txt{
+				width: 100%;
+			}
+			#img1{
+				width: 35px;
+				height: 25px;
+				float: left;
+			}
+			#txt1{
+				width: 150px;
+				float: left;
+			}
+			#btn1{
+				width: 45px;
+				height: 25px;
+				float: left;
+			}
+			.item-cell{
+				width: 100%;
+				display: table;
+				margin-bottom: 8px;
+				line-height: 24px;
+				font-size: 14px;
+			}
+			.item-cell dt{
+				display: table-cell;
+				width: 25px;
+				padding: 4px;
+			}
+			.item-cell dd{
+				display: table-cell;
+				vertical-align: middle;
+				padding: 4px;
+			}
+			.clearfix{
+				overflow: hidden;
+			}
+			.tr{
+				text-align: right;
+			}
+			.tu{
+				color: #fff;
+			}
+			.tu dd{
+				background: #f60;
+				border-radius: 4px;
+			}
+			.wo{
+				color: #fff;
+			}
+			.wo dd{
+				background: #f00;
+				border-radius: 4px;
+				text-align: right;
+			}
+		</style>
+		<script>
+		    window.onload=function (){
+		    	var oBox=document.getElementById('box');
+		    	var oPic=document.getElementById('pic');
+		    	var oImg=document.getElementById('img1');
+		    	var oTxt=document.getElementById('txt1');
+		    	var oBtn=document.getElementById('btn1');
+		    	
+		    	var num=1; //设置一个数字变量
+		    	var arrImg=['img/wo.png','img/tu.png']; //设置一个图片数组，存储图片
+		    	
+		    	oImg.onclick=function(){ //点击图片切换
+		    		if(num){ //如果是图片1的时候就显示蜗牛
+		    			oImg.src=arrImg[num];
+		    			num=0;
+		    		}
+		    		else{
+		    			oImg.src=arrImg[num];
+		    			num=1;
+		    		}
+		    	}
+		    	oBtn.onclick=function(){ //点击按钮，提交输入框的内容
+		    		if(oTxt.value==''){ //当输入框为空的时候，弹出下面的
+		    			alert('没有内容...');
+		    		}
+		    		else{ //否则提交下面的内容
+		    			if(num==1){ //是第一张图片的时候，蜗牛在说话
+			    			oBox.innerHTML = '<dl class="item-cell wo">' + '<dd>' + oTxt.value + '</dd>' + '<dt>' + oPic.innerHTML + '</dt>' + '</dl>' + oBox.innerHTML;
+			    		}
+			    		else{ //否则就是兔子在说话
+			    			oBox.innerHTML = '<dl class="item-cell tu">' + '<dt>' + oPic.innerHTML + '</dt>' + '<dd>' + oTxt.value + '</dd>' + '</dl>' + oBox.innerHTML;
+			    		}
+		    		}
+		    		oTxt.value='';
+		    	}
+		    	
+		    }
+		</script>
+	</head>
+
+	<body>
+		<div id="ft">
+			<div id="box">
+				<div id="box-txt"></div>
+			</div>
+			<div id="box-bot">
+				<div id="pic"><img id="img1" src="img/wo.png"></div>
+				<input id="txt1" type="text" />
+				<input type="button" name="" id="btn1" value="提交" />
+			</div>
+		</div>
+	</body>
+
+</html>

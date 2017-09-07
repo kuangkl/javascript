@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 200px;
+				background: #f5f5f5;
+				display: none;
+			}
+		</style>
+		<script>
+		    /*
+		     * 1.设置一个toShow函数
+		     * 2.获取按钮的id，div的id
+		     * 3.用if判断显示隐藏，给if添加条件
+		     * 4.给按钮添加点击事件
+		     * 5.给按钮替换文字
+		     */
+			function toShow(){
+				
+				var ant = document.getElementById('ant');
+				var box = document.getElementById('box');
+				
+				if(box.style.display=='block'){
+					box.style.display = 'none';
+					ant.value = '显示div'
+				}
+				else{
+					box.style.display = 'block';
+					ant.value = '隐藏div'
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="" id="ant" value="显示div" onclick="toShow()" />
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body><!--
+<script>
+function myfunction()
+{
+	var x;
+	var d=new Date().getDay();
+	switch(d)
+	{
+		case 1:
+		   x='今天是星期一';
+			 break;
+		case 2:
+		   x='今天是星期2';
+			 break;
+		case 3:
+		   x='今天是星期3';
+			 break;
+		case 4:
+		   x='今天是星期4';
+			 break;
+		case 5:
+		   x='今天是星期5';
+			 break;
+		case 6:
+		   x='今天是星期6';
+			 break;
+		case 7:
+		   x='今天是星期日';
+			 break;
+	}
+	document.getElementById('dome').innerHTML=x;
+}
+</script>
+<input type="button" onclick="myfunction()" value="sfdsdf" />
+<div id="dome"></div>-->
+
+<input type="button" value="ssd" onclick="myfun()" />
+<div id="demo"></div>
+<script>
+function myfun()
+{
+	var x;
+	var d=new Date().getDay();
+	switch(d)
+	{
+		case 0:
+		  x='今天是星期日';
+		  break;
+		case 1:
+		  x='今天是星期一';
+		  break;
+		case 2:
+		  x='今天是星期二';
+			break;
+		case 3:
+		  x='今天是星期三';
+			break;
+		case 4:
+		  x='今天是星期四';
+		  break;
+		case 5:
+		  x='今天是星期五';
+			break;
+		case 6:
+		  x='今天是星期六';
+			break;
+	}
+	document.getElementById('demo').innerHTML=x;
+}
+</script>
+
+
+
+</body>
+</html>

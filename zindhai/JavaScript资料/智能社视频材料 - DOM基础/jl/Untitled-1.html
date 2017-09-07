@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script language="JavaScript" type="text/javascript"> 
+function ChangeDiv(divId,divName,DivCount) 
+{ 
+ for(i=0;i<=DivCount;i++)
+ {
+     document.getElementById(divName+i).style.display="none"; 
+ }
+ document.getElementById(divName+divId).style.display="block"; 
+} 
+</script>
+<body>
+<div onMouseMove="JavaScript:ChangeDiv('0','id_',2)" style="cursor:hand; width:44px; height:28px; float:left;">层一</div>
+<div onMouseMove="JavaScript:ChangeDiv('1','id_',2)" style="cursor:hand; width:44px; height:28px; float:left;">层二</div>
+<div onMouseMove="JavaScript:ChangeDiv('2','id_',2)" style="cursor:hand; width:44px; height:28px; float:left;">层三</div>
+<div style="clear:both;"></div>
+<div id="BigDIV" style="border:solid 1px #cccccc;width:460px;margin:10px;">
+	<div id="id_0" style="font-size:14px;margin:20px;color:#FF0000;">层部分第一区
+		<div>dsfsf</div>
+	</div>
+	<div id="id_1" style="display:none;font-size:14px;margin:10px;color:#FF0000;">层部分第二区</div>
+	<div id="id_2" style="display:none;font-size:14px;margin:10px;color:#FF0000;">层部分第三区</div>
+</div>
+</body>
+</html>

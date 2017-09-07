@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#ad{
+				background: url(img/big.jpg);
+			}
+		</style>
+		<script>
+			
+			/*
+			 * 1、获取需要的id
+			 * 2、设置两个空的变量，存储定时器用的
+			 * 3、获取box元素最终的高度
+			 * 4、开启一个定时器(setInterval)，到达预定的高度就停止
+			 * 5、停留3秒(setTimeout)，再开启一个定时器(setInterval)，到达预定高度就停止
+			 */
+			window.onload = function(){
+				var box = document.getElementById('ad');
+				var t1;
+				var t2;
+				var h = parseInt(getComputedStyle(box).height);
+				//parseInt取一个整数，getComputedStyle获取当前元素最终的css属性
+				
+				t1 = setInterval(function(){
+					h++;
+					box.style.height = h + 'px';
+					if(h==250){
+						clearTimeout(t1);
+						t2 = setTimeout(function(){
+							t1 = setInterval(function(){
+								h--;
+								box.style.height = h + 'px';
+								if(h==100){
+									clearTimeout(t1);
+								}
+							},16);
+						},3000);
+					}
+				},16);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="ad">
+			
+		</div>
+	</body>
+</html>

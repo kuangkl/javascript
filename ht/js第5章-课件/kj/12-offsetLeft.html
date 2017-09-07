@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				border: #3276B1 20px solid;
+				margin: 10px 0 0 10px;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var box3 = document.getElementById("box3");
+				console.log(box3.offsetLeft);  // 包含边框
+				console.log(box3.offsetTop);   // 包含边框
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="box1">box1
+			<div id="box2">box2
+				<div id="box3">box3</div>
+			</div>
+		</div>
+	</body>
+
+</html>

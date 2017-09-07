@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 200px;
+				height: 100px;
+				background: #F0AD4E;
+				position: absolute;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var box = document.getElementById("box");
+				var l = (document.documentElement.clientWidth)/2;
+				var t = (document.documentElement.clientHeight)/2;
+				
+				box.style.left = l + 'px';
+				box.style.top = t + 'px';
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			登录框
+		</div>
+	</body>
+</html>

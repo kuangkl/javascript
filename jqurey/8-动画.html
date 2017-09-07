@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		
+		<style>
+		    *{
+		    	padding: 0;
+		    	margin: 0;
+		    }
+			.box{
+				width: 50px;
+				height: 50px;
+				border: 1px solid #DDDDDD;
+				position: absolute;
+				background: #f60;
+			}
+		</style>
+		
+		<script>
+			$(document).ready(function(){
+				$('button').click(function(){
+					var oBox=$('.box');
+					oBox.animate({
+						width:'100px',
+						height:'100px',
+						opacity:'.6'
+					});
+					oBox.animate({
+						width:'50px',
+						height:'50px',
+						opacity:'.3'
+					});
+					oBox.animate({
+						width:'200px',
+						height:'200px',
+						opacity:'.6'
+					});
+					
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<button>ant</button>
+		<div class="box">sdf</div>
+	</body>
+</html>

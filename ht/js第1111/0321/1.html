@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#btn{
+				text-align: center;
+				padding: 20px 0;
+			}
+			#btn input{
+				width: 100px;
+				height: 30px;
+				background: #927878;
+				border: 1px solid #605656;
+				color: #fff;
+				font-size: 14px;
+				cursor: pointer;
+			}
+			#imgWrap{
+				width: 520px;
+				height: 280px;
+				margin: 0 auto;
+				border: 5px solid #ccc;
+				position: relative;
+				overflow: hidden;
+			}
+			#num{
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				color: #fff;
+				position: absolute;
+				top: 0;
+				z-index: 3;
+				width: 100%;
+				background: rgba(0,0,0,0.7);
+			}
+			#img{
+				position: absolute;
+				top: 0;
+			}
+			
+			#text{
+				height: 30px;
+				background: rgba(0,0,0,0.7);
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				text-align: center;
+				color: #fff;
+				line-height: 30px;
+			}
+			.changeBtn{
+				position: absolute;
+				top:50%;
+				margin-top: -15px;
+				width: 30px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				color: #fff;
+				text-decoration: none;
+				font-weight: bold;
+				background: rgba(0,0,0,0.7);
+			}
+			#prev{
+				left: 10px;
+			}
+			#next{
+				right: 10px;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var num=document.getElementById("num");
+				var text=document.getElementById("text");
+				var prev=document.getElementById("prev");
+				var next=document.getElementById("next");
+				var img=document.getElementById("img");
+				var btn1=document.getElementById("btn1");
+				var btn2=document.getElementById("btn2");
+				
+				var imgArr=['456fgf','34435','sadsd','sdbg','sdfsdfcc'];	//图片的名字
+				var textArr=['明前茶上市','小s女儿同款','吃货福利一卡通','夏春新品','品牌团真材实木'];	//图片对应的文字
+				var n=0;		//这个变量就是三个要变化的内容所对应的数字
+				var on=true;	//这个变量代表了用户点击的是哪种形式，如果是顺序切换（true）,如果是循环切换（false）
+				
+				//初始化数字与文字
+				num.innerHTML=n+1+'/'+imgArr.length;
+				text.innerHTML=textArr[n];
+				
+				//顺序切换点击
+				btn1.onclick=function(){
+					on=true;
+				};
+				
+				//循环切换点击
+				btn2.onclick=function(){
+					on=false;
+				};
+				
+				
+				//左边按钮点击
+				prev.onclick=function(){
+					n--;
+					
+					if(n==-1){
+						//这个条件成立说明图片已经走到第一张了，这个时候就需要做判断了，根据按钮的不同，显示不同的图片
+						if(on==true){
+							//说明现在是顺序切换
+							n=0;
+							alert('到第一张了');
+						}else{
+							//说明现在是循环切换
+							n=imgArr.length-1;
+						}
+					}
+					
+					num.innerHTML=n+1+'/'+imgArr.length;
+					img.src='img2/'+imgArr[n]+'.jpg';
+					text.innerHTML=textArr[n];	
+				};
+				
+				//右边按钮点击
+				next.onclick=function(){
+					/*
+					 * 点击后要做的事情
+					 * 	1、让n的值不断的累加
+					 * 	2、改数字
+					 * 	3、改图片地址
+					 * 	4、改文字
+					 */
+					n++;
+					
+					
+					if(n==imgArr.length){
+						//这个条件成立说明图片已经走到最后一张了，这个时候就需要做判断了，根据按钮的不同，显示不同的图片
+						if(on==true){
+							//说明现在是顺序切换
+							n=imgArr.length-1;
+							alert('到最后了');
+						}else{
+							//说明现在是循环切换
+							n=0;
+						}
+					}
+					
+					num.innerHTML=n+1+'/'+imgArr.length;
+					img.src='img2/'+imgArr[n]+'.jpg';
+					text.innerHTML=textArr[n];
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<div id="btn">
+			<input type="button" id="btn1" value="顺序切换" />
+			<input type="button" id="btn2" value="循环切换" />
+		</div>
+		<div id="imgWrap">
+			<div id="num"></div>
+			<img id="img" src="img2/456fgf.jpg"/>
+			<a href="javascript:;" id="prev" class="changeBtn"><</a>
+			<a href="javascript:;" id="next" class="changeBtn">></a>
+			<div id="text"></div>
+		</div>
+	</body>
+</html>

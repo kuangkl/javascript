@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<style>
+body{ margin:0; padding:0;}
+ul,li{ margin:0; padding:0;}
+#div1{ height:22px;}
+#div1 li{ width:44px; height:20px; float:left; border:1px solid #dcdcdc;}
+#div1 .hover{ background:#f00;}
+#div2 li{ display:none; width:260px; height:200px; border:1px solid #dcdcdc;}
+</style>
+<script>
+/*window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	var oBtn=oDiv.getElementsByTagName('li');
+	var oDiv2=document.getElementById('div2');
+	var aDiv=oDiv2.getElementsByTagName('li');
+	
+	for(var i=0; i<oBtn.length; i++)
+	{
+		oBtn[i].index=i;
+		oBtn[i].onmouseover=function ()
+		{
+			for(var i=0; i<oBtn.length; i++)
+			{
+				oBtn[i].className='';
+				aDiv[i].style.display='none';
+			}
+			this.className='hover';
+			aDiv[this.index].style.display='block';
+		}
+	}
+}*/
+window.onload=function()
+{
+	var oDiv=document.getElementById('div1');
+	var oBtn=oDiv.getElementsByTagName('li');
+	var oDiv2=document.getElementById('div2');
+	var aLi=oDiv2.getElementsByTagName('li');
+	
+	for(var i=0; i<oBtn.length; i++)
+	{
+		oBtn[i].index=i;
+		oBtn[i].onmouseover=function ()
+		{
+			for(var i=0; i<oBtn.length; i++)
+			{
+				oBtn[i].className='';
+				aLi[i].style.display='none';
+			}
+			this.className='hover';
+			aLi[this.index].style.display='block';
+		}
+	}
+}
+</script>
+<body>
+<div id="div1">
+   <ul>
+	   <li class="hover">新三板做市指数</li>
+		<li>新三板成指</li>
+	</ul>
+</div>
+<div id="div2">
+  <ul>
+	<li style="display:block;">1111</li>
+	<li>2222</li>
+	</ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		    /*
+		     * 1.获取各元素的id
+		     * 2.用到了getElementsByTagName，选取一组元素
+		     * 3.用到for
+		     * 4.用到了if，判断是否选择了
+		     */
+			window.onload = function(){
+				
+				var btn1 = document.getElementById('btn1');
+				var btn2 = document.getElementById('btn2');
+				var btn3 = document.getElementById('btn3');
+				
+				var box = document.getElementById('box');
+				var ach = box.getElementsByTagName('input');
+				
+				btn1.onclick = function(){
+					for(var i=0; i<ach.length; i++){
+						ach[i].checked = true;
+					}
+				}
+				btn2.onclick = function(){
+					for(var i=0; i<ach.length; i++){
+						ach[i].checked = false;
+					}
+				}
+				btn3.onclick = function(){
+					for(var i=0; i<ach.length; i++){
+						if(ach[i].checked == false){
+							ach[i].checked = true;
+						}
+						else{
+							ach[i].checked = false;
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="btn1" id="btn1" value="全选" />
+		<input type="button" name="btn2" id="btn2" value="不选" />
+		<input type="button" name="btn3" id="btn3" value="反选" />
+		<div id="box">
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+			<input type="checkbox" name="" id="" value="" />
+		</div>
+	</body>
+</html>

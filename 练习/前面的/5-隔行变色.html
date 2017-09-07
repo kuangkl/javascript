@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		    /*
+		     * 1.获取ul的id
+		     * 2.获取li组
+		     * 3.在for循环里面操作
+		     * 4.用if判断单双行
+		     * 5.取模
+		     */
+			window.onload = function(){
+				
+				var oul = document.getElementById('oul');
+				var oLi = oul.getElementsByTagName('li');
+				
+				for(var i=0; i<oLi.length; i++){
+					if(i%2==0){
+						oLi[i].style.background = '#f60';
+					}
+					else{
+						oLi[i].style.background = '';
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="oul">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>

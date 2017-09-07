@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img{
+				display: block;
+			}
+		</style>
+		<script>
+//		    window.onload=function(){
+//		    	var next=document.getElementById('next');
+//		    	var prve=document.getElementById('prve');
+//		    	var pic=document.getElementById('pic');
+//		    	var txt=document.getElementById('txt');
+//		    	
+//		    	var n=0; //设置一个变量n
+//		    	var imgarr=['pro_wey','pro_wyl','pro_yg','zj-wj'];
+//		    	var txtarr=['1','2','3','4'];
+//		    	next.onclick=function(){
+//		    		n++;
+//		    		if(n>imgarr.length-1){ //n大于图片数组个数的时候,n等于0,又从第一张开始（减一是因为数组是从0开始的）
+//		    			n=0;
+//		    		}
+//		    		pic.src='img/' + imgarr[n] + '.png'; //获取图片的路径 
+//		    		txt.innerHTML=txtarr[n] + '/4'; //替换txt的文本
+//		    	}
+//		    	prve.onclick=function(){
+//		    		n--;
+//		    		if(n<0){ //n小于0的时候，n等于图片个数的最后一张
+//		    			n=imgarr.length-1;
+//		    		}
+//		    		pic.src='img/' + imgarr[n] + '.png';
+//		    		txt.innerHTML=txtarr[n] + '/4';
+//		    	}
+//		    }
+			window.onload=function(){
+				var next=document.getElementById('next');
+				var prve=document.getElementById('prve');
+				var pic=document.getElementById('pic');
+				var txt=document.getElementById('txt');
+				var n=0; //设置一个变量n
+				var imgArr=['pro_wey','pro_wyl','pro_yg','zj-wj'];
+				var txtArr=['1','2','3','4'];
+				function turight(){
+					n++; 
+					if(n>imgArr.length-1){ //n大于图片数组个数的时候,n等于0,又从第一张开始（减一是因为数组是从0开始的）
+						n=0;
+					}
+					pic.src='img/'+imgArr[n]+'.png'; //获取图片的路径 
+					txt.innerHTML=txtArr[n] + '/4'; //替换txt的文本
+				}
+				next.onclick=turight;
+				pic.onclick=turight;
+				
+				function tuleft(){
+					n--;
+					if(n<0){ //n小于0的时候，n等于图片个数的最后一张
+						n=imgArr.length-1;
+					}
+					pic.src='img/'+imgArr[n]+'.png';
+					txt.innerHTML=txtArr[n] + '/4';
+				}
+				prve.onclick=tuleft;
+			}
+		</script>
+	</head>
+	<body>
+		
+		<input type="button" name="" id="prve" value="上一个" />
+		<input type="button" name="" id="next" value="下一个" />
+		<img src="img/pro_wey.png" id="pic"/>
+		<div id="txt">
+			1/4
+		</div>
+	</body>
+</html>

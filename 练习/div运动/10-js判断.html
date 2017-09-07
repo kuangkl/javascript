@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 300px;
+				height: 200px;
+				background: #f5f5f5;
+				border: 1px solid #DCDCDC;
+			}
+			#hide{
+				width: 300px;
+				display: none;
+				color: #f00;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var oDiv=document.getElementById('box');
+				var oTxt1=document.getElementById('txt1');
+				var oTxt2=document.getElementById('txt2');
+				var oBtn=document.getElementById('btn1');
+				
+				var oHide=document.getElementById('hide');
+				
+				oBtn.onclick=function(){
+					if(oTxt2.value==''){
+						oHide.style.display='block';
+					}
+					else{
+						oDiv.innerHTML=oDiv.innerHTML + oTxt1.innerHTML + oTxt2.value + '<br>';
+						oTxt2.value='';
+						oHide.style.display='none';
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+		<span id="txt1">张三说：</span><input type="text" id="txt2" >
+		<input type="button" id="btn1" value="按钮">
+		<div id="hide">请输入内容</div>
+	</body>
+</html>

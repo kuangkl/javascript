@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background: #f60;
+				margin: 10px;
+			}
+		</style>
+		<script>
+			/*
+			 * 给函数设置两个参数
+			 * 给速度做向上向下的取整
+			 * 
+			 */
+			function startMove1(obj,Tiger){
+				clearInterval(obj.timer);
+				obj.timer=setInterval(function(){
+					
+					var speed=(Tiger-obj.offsetWidth)/6;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					
+					if(obj.offsetWidth==Tiger){
+						clearInterval(obj.timer);
+					}
+					else{
+						obj.style.width=obj.offsetWidth+speed+'px';
+					}
+				}, 30);
+			}
+			function startMove2(obj,Tiger){
+				clearInterval(obj.timer);
+				obj.timer=setInterval(function(){
+					
+					var speed=(Tiger-obj.offsetHeight)/6;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					
+					if(obj.offsetHeight==Tiger){
+						clearInterval(obj.timer);
+					}
+					else{
+						obj.style.height=obj.offsetHeight+speed+'px';
+					}
+				}, 30);
+			}
+			window.onload=function(){
+				
+				var oDiv1=document.getElementById('box1');
+				oDiv1.onmouseover=function(){
+					startMove1(this,400);
+				}
+				oDiv1.onmouseout=function(){
+					startMove1(this,200);
+				}
+				
+				var oDiv2=document.getElementById('box2');
+				oDiv2.onmouseover=function(){
+					startMove2(this,400);
+				}
+				oDiv2.onmouseout=function(){
+					startMove2(this,200);
+				}
+			}
+		</script>
+		
+		<!--<script>
+		    window.onload=function(){
+		    	
+		    	var oDiv1=document.getElementById('box1');
+		    	oDiv1.onmouseover=function(){
+		    		startMove1(this,400);
+		    	}
+		    	oDiv1.onmouseout=function(){
+		    		startMove1(this,200);
+		    	}
+		    	
+		    	var oDiv2=document.getElementById('box2');
+		    	oDiv2.onmouseover=function(){
+		    		startMove2(this,400);
+		    	}
+		    	oDiv2.onmouseout=function(){
+		    		startMove2(this,200);
+		    	}
+		    }
+		    
+			function startMove1(obj,Tiger){
+				
+				clearInterval(obj.timer);
+				obj.timer=setInterval(function(){
+					
+					var speed=(Tiger-obj.offsetWidth)/6;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					
+					if(obj.offsetWidth==Tiger){
+						clearInterval(obj.timer);
+					}
+					else{
+						obj.style.width=obj.offsetWidth+speed+'px';
+					}
+				}, 30);
+			}
+			
+			function startMove2(obj,Tiger){
+				
+				clearInterval(obj.timer);
+				obj.timer=setInterval(function(){
+					
+					var speed=(Tiger-obj.offsetHeight)/6;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					
+					if(obj.offsetHeight==Tiger){
+						clearInterval(obj.timer);
+					}
+					else{
+						obj.style.height=obj.offsetHeight+speed+'px';
+					}
+				}, 30);
+			}
+		</script>-->
+	</head>
+	<body>
+		<div id="box1"></div>
+		<div id="box2"></div>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+
+			.fl {
+				float: left;
+			}
+			
+			.clock {
+				width: 800px;
+				height: 200px;
+				margin: 200px auto;
+			}
+			
+			.colon {
+				width: 82px;
+				height: 156px;
+				background: url(images/colon.png);
+			}
+		</style>
+		<script>
+			/*
+			 * function toDouble(n) {
+				if(n < 10) {
+					return '0' + n; // 当n小于10的时候在前面加一个0；
+				} else {
+					return '' + n; //大于10时不用加
+				}
+			}
+			window.onload = function() {
+				var aImg = document.getElementsByTagName('img');
+				//！尽量不要使用getElementsByClassName，IE5、7、8存在兼容问题
+				function tick() { 
+					var oDate = new Date(); //获取当前时间
+					//console.log(oDate)
+					var str = toDouble(oDate.getHours()) + toDouble(oDate.getMinutes()) + toDouble(oDate.getSeconds());
+					// toDouble把时间转化成数字，getHours小时；getMinutes分钟；getSeconds秒。
+					for(var i = 0, max = aImg.length; i < max; i++) {
+						aImg[i].src = 'img/' + str.charAt(i) + '.png';
+						//str[i]在IE5、7中存在兼容问题，由charAt(i)来进行获取
+					}
+				}
+				setInterval(tick, 1000); // 这是一个定时器，每个1s走一次；
+				
+				tick(); //在页面刷新的时候，会出现一次全零的状态，所有要在这里调用一次tick(),
+			}
+			 */
+			function toDouble(n){
+				if(n<10){
+					return '0' + n;
+				}
+				else
+				{
+					return '' + n;
+				}
+			}
+			window.onload=function(){
+				var oImg=document.getElementsByTagName('img');
+				function tick(){
+					var oDate=new Date();
+					var str = toDouble(oDate.getHours()) + toDouble(oDate.getMinutes()) + toDouble(oDate.getSeconds());
+					for(var i=0; i<oImg.length; i++){
+						oImg[i].src='img/' + str.charAt(i) + '.png';
+						//str[i]在I7中存在兼容问题，由charAt(i)来进行获取
+					};
+				}
+				setInterval(tick,1000);
+				tick();
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="clock">
+			<img src="img/0.png" class="number fl" />
+			<img src="img/0.png" class="number fl" />
+			<div class="colon fl"></div>
+			<img src="img/0.png" class="number fl" />
+			<img src="img/0.png" class="number fl" />
+			<div class="colon fl"></div>
+			<img src="img/0.png" class="number fl" />
+			<img src="img/0.png" class="number fl" />
+		</div>
+
+	</body>
+
+</html>
