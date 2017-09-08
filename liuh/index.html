@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,
+			body{
+				padding: 0;
+				margin: 0;
+				height: 100%;
+			}
+			.box{
+				height: 100%;
+				display: flex;
+				display: -webkit-box;
+				display: -webkit-flex;
+				flex-flow: column;
+			}
+			.box div:nth-of-type(1){
+				-webkit-flex: 1;
+				flex: 1;
+				background: orange;
+			}
+			.box div:nth-of-type(2){
+				-webkit-flex: 1;
+				flex: 1;
+				background: red;
+			}
+			.box div:nth-of-type(3){
+				-webkit-flex: 1;
+				flex: 1;
+				background: gold;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div>1111</div>
+			<div>2222</div>
+			<div>3333</div>
+		</div>
+	</body>
+</html>
