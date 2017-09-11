@@ -1,0 +1,42 @@
+/*
+ * 在做减法运算的时候，一定要记着，减号前后要加上一个空格，不然就会报错
+ * 
+ * 避免编译，就把不需要编译的内容前面先加上一个~，把内容放到一对引号中
+ */
+
+
+@w:300px;
+
+.box1{
+    width: @w;
+    height: @w+100;
+    height: @w - 100;
+    
+    border: 1px solid #f00;
+    
+    position: relative;
+    left: @w*2;
+    top: @w/3;
+}
+
+
+@width: 200px;
+@height: 600px;
+
+.box2{
+    width: @width;
+    height: @height;
+    border: 1px solid #f00;
+    
+    div{
+        width: @width/2;
+        height: @height/2;
+        background: green;
+        
+        margin: (@height - @height/2)/2 auto 0 auto;
+        
+        filter: ~'alpha(opacity:50)';
+    }
+}
+
+

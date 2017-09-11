@@ -1,0 +1,78 @@
+/*#box{
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #f00;
+}
+#box h2{
+    font: 20px/20px "微软雅黑";
+}
+#box p{
+    color: green;
+}
+#box ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#box li{
+    height: 30px;
+    background: #ccc;
+}
+#box li a{
+    color: #f00;
+}
+#box li a:hover{
+    color:blue;
+}
+
+* 
+* */
+
+
+
+/*
+ * &        上一层的选择器
+ */
+
+#box{
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #f00;
+    &{
+        border: 5px solid #f00;
+    }
+    
+    h2{
+        font: 20px/20px "微软雅黑";
+    }
+    
+    p{
+      color: green;  
+    }
+    
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        
+        li{
+            height: 30px;
+            background: #ccc;
+            
+            a{
+              color: #f00;
+              &:hover{
+                  color: blue;
+              }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+.box1 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 10px;
+  border-color: transparent transparent red transparent;
+  border-style: dashed dashed solid dashed;
+}
+.box2 {
+  border-color: transparent transparent green transparent;
+  border-style: dashed dashed solid dashed;
+  border-color: transparent transparent transparent green;
+  border-style: dashed dashed dashed solid;
+  border-color: green transparent transparent transparent;
+  border-style: solid dashed dashed dashed;
+  border-width: 50px;
+  border-color: transparent green transparent transparent;
+  border-style: dashed solid dashed dashed ;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.box3 {
+  border-width: 50px;
+  border-color: transparent transparent transparent green;
+  border-style: dashed dashed dashed solid;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.box4 {
+  position: relative;
+  position: absolute;
+  position: fixed;
+  left: 10px;
+  top: 20px;
+  width: 200px;
+  height: 200px;
+  background: red;
+}

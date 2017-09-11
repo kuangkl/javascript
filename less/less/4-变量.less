@@ -1,0 +1,39 @@
+/*
+ * 这里是注释，这个注释在css里是可以看见的
+ */
+//这里也是注释
+
+
+/*
+ * 变量
+ *  可变的量（值）
+ * 
+ * b=10;
+ *  在下面要用到10的地方就可以用a来表示
+ * 
+ * less里声明一个变量的方法
+ *  @变量名:值
+ * 
+ * 用变量去定义一个属性名的时候，在用的时候，一定要给这个名字加上一对大括号
+ * 用变量去定义一个路径的时候，在用的时候，一定要在整个路径的外面加上一对引号，并且路径变量名在用的时候也要加大括号
+ */
+
+@w:200px;
+@border:1px solid #f00;
+@property:color;
+@value:green;
+@images:'../images';
+
+.box{
+    width: @w;
+    height: @w;
+    border: @border;
+    @{property}: @value;
+    background-@{property}: @value;
+    background-image: url('@{images}/banner.jpg');
+}
+
+
+
+
+

@@ -1,0 +1,24 @@
+/*
+ * 在做减法运算的时候，一定要记着，减号前后要加上一个空格，不然就会报错
+ */
+.box1 {
+  width: 300px;
+  height: 400px;
+  height: 200px;
+  border: 1px solid #f00;
+  position: relative;
+  left: 600px;
+  top: 100px;
+}
+.box2 {
+  width: 200px;
+  height: 600px;
+  border: 1px solid #f00;
+}
+.box2 div {
+  width: 100px;
+  height: 300px;
+  background: green;
+  margin: 150px auto 0 auto;
+  filter: alpha(opacity:50);
+}

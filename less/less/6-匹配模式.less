@@ -1,0 +1,71 @@
+.box1{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    
+    border-width: 10px;
+    border-color: transparent transparent red transparent;
+    border-style: dashed dashed solid dashed;
+}
+
+//匹配模式
+.triangle(top,@w:5px,@c:red){
+    border-width: @w;
+    border-color: transparent transparent @c transparent;
+    border-style: dashed dashed solid dashed;
+}
+.triangle(right,@w:5px,@c:red){
+    border-width: @w;
+    border-color: transparent transparent transparent @c;
+    border-style: dashed dashed dashed solid;
+}
+.triangle(bottom,@w:5px,@c:red){
+    border-width: @w;
+    border-color: @c transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+}
+.triangle(left,@w:5px,@c:red){
+    border-width: @w;
+    border-color: transparent @c transparent transparent;
+    border-style: dashed solid dashed dashed ;
+}
+
+//公用的样式，需要放到下面这个class里，第一个参数是固定的格式（@_）,后面的参数与上面保持一致
+.triangle(@_,@w:5px,@c:red){
+    width: 0;
+    height: 0;
+    overflow: hidden; 
+}
+
+.box2{
+    .triangle(top,50px,green);
+    .triangle(right,50px,green);
+    .triangle(bottom,50px,green);
+    .triangle(left,50px,green);
+}
+.box3{
+    .triangle(right,50px,green);
+}
+
+
+.pos(r){
+    position: relative;
+}
+.pos(a){
+    position: absolute;
+}
+.pos(f){
+    position: fixed;
+}
+
+
+.box4{
+    .pos(r);
+    .pos(a);
+    .pos(f);
+    left: 10px;
+    top: 20px;
+    width: 200px;
+    height: 200px;
+    background: red;
+}
