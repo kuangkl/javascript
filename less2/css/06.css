@@ -1,0 +1,32 @@
+.box1 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 10px;
+  border-color: transparent transparent #f60 transparent;
+  border-style: dashed dashed solid dashed;
+}
+.box2 {
+  border-width: 10px;
+  border-color: transparent transparent transparent green;
+  border-style: dashed dashed solid dashed;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.box3 {
+  border-width: 50px;
+  border-color: transparent green transparent transparent;
+  border-style: dashed solid dashed dashed;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.box4 {
+  width: 100px;
+  height: 100px;
+  background: #f60;
+  position: fixed;
+  top: 0;
+  left: 100px;
+}
