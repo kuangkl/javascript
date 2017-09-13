@@ -1,0 +1,176 @@
+
+
+h3,h4,p{
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    vertical-align: middle;
+}
+
+.align(r){
+    text-align: right;
+}
+
+.align(c){
+    text-align: center;
+}
+
+.align(l){
+    text-align: left;
+}
+
+.dis(b){
+    display: block;
+}
+
+.dis(i){
+    display: inline;
+}
+
+.dis(ib){
+    display: inline-block;
+}
+
+.float(l){
+    float: left;
+}
+
+.float(r){
+    float: right;
+}
+
+.clearfix{
+    &:after{
+        content: '';
+        .dis(b);
+        clear: both;
+    }
+}
+
+.font(@bold:normal,@size:16px,@lght:14px,@c:orange){
+    font: @bold @size/@lght "微软雅黑";
+    color: @c;
+}
+
+.link(@size:12px,@lght:14px,@c:#ccc,@hover:#f60){
+    font: @size/@lght "微软雅黑";
+    color:@c; 
+    &:hover{
+        color: @hover;
+    }
+}
+
+section{
+    @w:1187px;
+    @h:363px;
+    @boxpd:14px;
+    @border:1px solid #e8e8e8;
+    
+    width: @w;
+    height: @h;
+    border: @border;
+    .clearfix;
+    
+    .box{
+        width: (@w - 5)/6 - @boxpd*2;
+        height: @h;
+        padding: 0 @boxpd;
+        border-right: @border;
+        .float(l);
+        &:nth-last-child(1){
+            border-right: none;
+        }
+    }
+    h3{
+        .font(bold,16px,41px);
+        .dis(ib);
+    }
+    
+    .imgBox{
+        background: #f5f5f5;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        .align(c);
+        .font(normal,12px,18px,#c9c9c9);
+        
+        a{
+            color: #666;
+            &:hover{
+                color: #f60;
+            }
+        }
+    }
+    
+    ul{
+        .clearfix;
+    }
+    li{
+        width: 80px;
+        .align(c);
+        &:nth-child(1){
+            .float(l);
+        }
+        &:nth-child(2){
+            .float(r);
+        }
+        .title{
+            .dis(b);
+            .link();
+            padding: 10px 0;
+        }
+    }
+    
+    .link1{
+        a{
+            .link(@c:#888);
+            border-left: @border;
+            padding: 0 4px;
+            &:nth-child(1){
+                border-left: none;
+            }
+        }
+    }
+    .link2{
+        margin-top: 14px;
+        .font(@size:12px,@c:#888);
+        a{
+            .font(@size:12px,@c:#f00);
+            padding: 0 2px;
+        }
+        span{
+            padding-left: 4px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
