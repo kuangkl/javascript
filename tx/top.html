@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>导航顶部固定、滚动是导航高渐变变小</title>
+		<script src="js/jquery.js"></script>
+		
+		<link rel="stylesheet" href="css/css.css" />
+		<script>
+			$(function(){
+				$(window).scroll(function(){
+					if($(this).scrollTop() > 80){
+						$('.header').addClass('header-scroll');		// 添加一个样式
+					}
+					else{
+						$('.header').removeClass('header-scroll');	// 删除一个样式
+					}
+				})
+			});
+		</script>
+
+	</head>
+
+	<body style="height: 2000px;">
+		
+		<div class="header"></div>
+		
+		<div class="quan"></div>
+		
+
+	</body>
+
+</html>

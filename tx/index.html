@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://security.tencent.com/ -->
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+		<title>腾讯安全应急响应中心 </title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="description" content="腾讯安全应急响应中心,Tencent Security Response Center,TSRC">
+		<meta name="keywords" content="腾讯,Tencent,安全团队,应急响应,腾讯安全应急响应中心,Tencent Security Response Center,TSRC">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="icon shortcut" href="https://security.tencent.com/static/v2.0/images/favicon.ico">
+		<link rel="stylesheet" href="css/main.min.css">
+		<!--[if (gte IE 6)&(lte IE 8)]>
+        <script type="text/javascript" src="static/plugins/selectivizr.min.js"></script>
+        <script type="text/javascript" src="static/plugins/respond.min.js"></script>
+        <![endif]-->
+		<script type="text/javascript" src="js/jquery.js"></script>
+
+		<style type="text/css">
+			.header>div .userpanel .userpanel_login .login-btn-1 {
+				width: 90px;
+				margin: 0 20px;
+				-webkit-transition: color .2s, border-color .2s, width .5s, height .5s, line-height .5s;
+				transition: color .2s, border-color .2s, width .5s, height .5s, line-height .5s;
+			}
+			
+			.header>div .userpanel .userpanel_login .login-btn-2 {
+				width: 90px;
+				margin: 0 0px;
+				-webkit-transition: color .2s, border-color .2s, width .5s, height .5s, line-height .5s;
+				transition: color .2s, border-color .2s, width .5s, height .5s, line-height .5s;
+			}
+		</style>
+
+		<script type="text/javascript">
+			$(function() {
+
+				
+				// 导航栏效果
+				$(window).scroll(function() {
+					if($(this).scrollTop() > 80) {
+						$('.header').addClass('header-scroll');
+					} else {
+						$('.header').removeClass('header-scroll');
+					}
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<div class="header">
+			<div>
+				<div class="logo">
+					<a href="https://security.tencent.com/index.php">
+						<div class="logo_pic">
+						</div>
+						<div class="logo_name">
+							<p>腾讯安全应急响应中心</p>
+							<p>Tencent Security Response Center</p>
+						</div>
+					</a>
+				</div>
+
+				<div class="userpanel">
+					<div class="userpanel_login" style="display:block">
+						<a class="mod-btn mod-btn-black login-btn-1 login-qq" href="https://security.tencent.com/index.php/login/in?type=qq&amp;redirect_uri=https%3A%2F%2Fsecurity.tencent.com%2F">QQ 登录</a>
+						<a class="mod-btn mod-btn-black login-btn-2 login-wx" href="https://security.tencent.com/index.php/login/in?type=wx&amp;redirect_uri=https%3A%2F%2Fsecurity.tencent.com%2F">微信登录</a>
+					</div>
+					<div class="userpanel_user" style="display:none">
+						<img class="user_avatar mod-avatar-30" src="https://security.tencent.com/" alt="">
+						<span class="user_username"><i class="i-header-message" style="display:none"></i></span>
+						<i class="user_arrow"></i>
+						<div class="user_menu">
+							<ul class="menu_list">
+								<li class="list_item list_item-user">
+									<a href="https://security.tencent.com/index.php/user">
+										<i class="item_icon"></i>
+										<span class="item_text">个人主页</span>
+									</a>
+								</li>
+								<li class="list_item list_item-message">
+									<a href="https://security.tencent.com/index.php/user/message">
+										<i class="item_icon"></i>
+										<span class="item_text">消息中心</span>
+										<i class="item_icon-message" style="display:none"></i>
+									</a>
+								</li>
+								<li class="list_item list_item-account">
+									<a href="https://security.tencent.com/index.php/user/info">
+										<i class="item_icon"></i>
+										<span class="item_text">账户设置</span>
+									</a>
+								</li>
+								<li class="list_item list_item-logout">
+									<a id="logout" href="javascript:void(0)">
+										<i class="item_icon"></i>
+										<span class="item_text">退出</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="nav">
+					<ul>
+						<li name="index" class="nav_item-active">
+							<a href="https://security.tencent.com/index.php">首页</a>
+						</li>
+						<li name="report_add">
+							<a href="https://security.tencent.com/index.php/report/add">提交漏洞</a>
+						</li>
+						<li name="thanks">
+							<a href="https://security.tencent.com/index.php/thanks">英雄榜</a>
+						</li>
+						<li name="shop">
+							<a href="https://security.tencent.com/index.php/shop">礼品兑换</a>
+						</li>
+						<li name="blog">
+							<a href="https://security.tencent.com/index.php/blog">博客</a>
+						</li>
+						<li name="opensource">
+							<a href="https://security.tencent.com/index.php/opensource">实验室</a>
+						</li>
+						<li name="aixin">
+							<a href="https://security.tencent.com/index.php/aixin">公益</a>
+						</li>
+						<li name="about">
+							<a href="https://security.tencent.com/index.php/about">关于我们</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container container-home">
+			<div>
+				<!-- section-banner -->
+				<div class="section section-banner">
+					<div class="earth_movemap">
+						<div class="movemap movemap-back movemap-back-0"></div>
+						<div class="movemap movemap-back movemap-back-1"></div>
+						<div class="movemap movemap-back movemap-back-2"></div>
+						<div class="movemap movemap-front movemap-front-0"></div>
+						<div class="movemap movemap-front movemap-front-1"></div>
+						<div class="movemap movemap-front movemap-front-2"></div>
+					</div>
+
+					<div class="stargroup">
+						<div class="mask mask-left"></div>
+						<div class="mask mask-right"></div>
+
+						<div class="stars">
+						</div>
+					</div>
+
+					<div class="section_banner">
+						<div class="banner_acronym">
+							<div class="acronym_tsrc"></div>
+						</div>
+						<div class="banner_name">
+							<p>腾讯安全应急响应中心</p>
+							<p>Tencent Security Response Center</p>
+						</div>
+						<div class="banner_welcome">
+							<p>诚邀广大安全专家共捍亿万互联网用户安全</p>
+						</div>
+						<div class="banner_submit">
+							<a href="https://security.tencent.com/index.php/report/add" target="_blank">
+								<!-- 目前暂时采用图片 -->
+								<!-- 在线提交漏洞 -->
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- 公告 section-announcement -->
+				<div class="section section-announcement">
+					<div class="section_announcement">
+						<!-- <a class="announcement_arrowleft" href=""></a> -->
+						<div class="announcement_list">
+							<ul>
+								<li>
+									<a class="announcement_title" target="_blank" href="https://security.tencent.com/index.php/announcement/msg/126">[TPSA17-14] 2017年8月腾讯外部安全报告处理公告</a>
+									<p class="announcement_intro">2017年8月，共 77 位安全专家通过安全问题反馈平台向腾讯报告安全问题，腾讯对这些安全专家表示感...</p>
+								</li>
+								<li>
+									<a class="announcement_title" target="_blank" href="https://security.tencent.com/index.php/announcement/msg/125">[TPSA17-13] 2017年7月腾讯外部安全报告处理公告</a>
+									<p class="announcement_intro">2017年7月，共63位安全专家通过安全问题反馈平台向腾讯报告安全问题，腾讯对这些安全专家表示感谢&amp;...</p>
+								</li>
+								<!-- <li>
+                            <a class="announcement_title" href="html/announcementdetail.html">
+                                【2015-8-15】2015年8月腾讯外部安全报告处理公告
+                            </a>
+                            <p class="announcement_intro">
+                                共56位安全专家通过安全问题反馈平台向腾讯报告安全
+                            </p>
+                        </li> -->
+							</ul>
+						</div>
+
+						<a class="announcement_more" href="https://security.tencent.com/index.php/announcement" target="_blank">
+							更多
+						</a>
+					</div>
+				</div>
+				<!-- 排名(龙虎榜) section-rank -->
+				<div class="section section-rank">
+					<div class="section_rank">
+						<div class="mod-introduce">
+							<!-- title -->
+							<div class="introduce_title"></div>
+							<!-- icongroup -->
+							<div class="introduce_icongroup">
+								<span class="icongroup_line"></span>
+								<i class="icongroup_icon"></i>
+								<span class="icongroup_line"></span>
+							</div>
+							<!-- descript -->
+							<div class="introduce_description">
+								<p>各路安全专家长期关注腾讯安全，帮助TSRC提高腾讯产品安全水平，保障了腾讯数亿用户的安全在线生活。</p>
+							</div>
+							<!-- more -->
+							<div class="introduce_more">
+								<a class="mod-btn mod-btn-black" target="_blank" href="https://security.tencent.com/index.php/thanks?timetype=month&amp;holetype=all&amp;year=2017&amp;month=9">更多英雄</a>
+							</div>
+						</div>
+
+						<!-- 下半部分 -->
+						<div class="rank_hero">
+							<!-- second -->
+							<a class="hero hero-second" href="https://security.tencent.com/index.php/user/p/6F06595C1D57E65544CD592030CA97F6" target="_blank">
+								<div>
+									<p class="hero_rank">第二名</p>
+									<div class="hero_avatar">
+										<img class="mod-avatar mod-avatar-100" src="img/100" alt="">
+									</div>
+									<p class="hero_name">
+										farmer </p>
+									<p class="hero_contribution">
+										贡献值 <span>22点</span>
+									</p>
+								</div>
+							</a>
+							<!-- first -->
+							<a class="hero hero-first" href="https://security.tencent.com/index.php/user/p/CA315A47A5DD430E6D493334C0535F5E" target="_blank">
+								<div>
+									<p class="hero_rank">第一名</p>
+									<div class="hero_avatar">
+										<img class="mod-avatar mod-avatar-100" src="img/jtaoiz4s7hc8necriknfm18zr07ujmiq.jpg" alt="">
+									</div>
+									<p class="hero_name">
+										Camaro </p>
+									<p class="hero_contribution">
+										贡献值 <span>50点</span>
+									</p>
+
+								</div>
+							</a>
+							<!-- third -->
+							<a class="hero hero-third" href="https://security.tencent.com/index.php/user/p/77EF6DBD843BF5A04103FC0FCFE3592E" target="_blank">
+								<div>
+									<p class="hero_rank">第三名</p>
+									<div class="hero_avatar">
+										<img class="mod-avatar mod-avatar-100" src="img/ubpw0ek3lqpok711exj3px90dx01nejr.jpg" alt="">
+									</div>
+									<p class="hero_name">
+										局外人 </p>
+									<p class="hero_contribution">
+										贡献值 <span>20点</span>
+									</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- 礼品兑换(精美礼品) section-shop -->
+				<div class="section section-shop">
+					<div class="section_shop">
+						<div class="mod-introduce">
+							<!-- title -->
+							<div class="introduce_title"></div>
+							<!-- icongroup -->
+							<div class="introduce_icongroup">
+								<span class="icongroup_line"></span>
+								<i class="icongroup_icon"></i>
+								<span class="icongroup_line"></span>
+							</div>
+							<!-- descript -->
+							<div class="introduce_description">
+								<p>丰富的礼品，丰厚的奖励，任您选~</p>
+							</div>
+							<!-- more -->
+							<div class="introduce_more">
+								<a class="mod-btn mod-btn-black mod-btn-transparent" href="https://security.tencent.com/index.php/shop" target="_blank">更多奖品</a>
+							</div>
+						</div>
+
+						<ul class="mod-itemlist-shop">
+							<li class="itemlist_item mod-floatblock">
+								<a href="https://security.tencent.com/index.php/shop/prize/321" target="_blank">
+									<div class="item_pic"><img src="img/ee5f4a3de7939e067d3eaeece40749e0.png" alt=""></div>
+									<p class="item_name">2017年端午节礼物</p>
+								</a>
+								<p class="item_content">安全币<span class="item_cost">100</span>已兑换<span class="item_exchangednum">0</span>个</p>
+							</li>
+							<li class="itemlist_item mod-floatblock">
+								<a href="https://security.tencent.com/index.php/shop/prize/320" target="_blank">
+									<div class="item_pic"><img src="img/9cf90c7131294d2392cb1634f36e25a6.png" alt=""></div>
+									<p class="item_name">2017年儿童节礼物</p>
+								</a>
+								<p class="item_content">安全币<span class="item_cost">100</span>已兑换<span class="item_exchangednum">0</span>个</p>
+							</li>
+							<li class="itemlist_item mod-floatblock">
+								<a href="https://security.tencent.com/index.php/shop/prize/316" target="_blank">
+									<div class="item_pic"><img src="img/995e34bfe36601bc1be2ec45d0a7e71c.png" alt=""></div>
+									<p class="item_name">25CM鸡年公仔</p>
+									<div class="flag flag-hot"></div>
+								</a>
+								<p class="item_content">安全币<span class="item_cost">8</span>已兑换<span class="item_exchangednum">60</span>个</p>
+							</li>
+							<li class="itemlist_item mod-floatblock">
+								<a href="https://security.tencent.com/index.php/shop/prize/314" target="_blank">
+									<div class="item_pic"><img src="img/34814229ee84b11357a180f8eab8808c.png" alt=""></div>
+									<p class="item_name">手机 苹果 iphone7 plus 128G</p>
+								</a>
+								<p class="item_content">安全币<span class="item_cost">1400</span>已兑换<span class="item_exchangednum">2</span>个</p>
+							</li>
+							<li class="itemlist_item mod-floatblock">
+								<a href="https://security.tencent.com/index.php/shop/prize/300" target="_blank">
+									<div class="item_pic"><img src="img/553023c78eaa8e4a09bc42bb237407d8.png" alt=""></div>
+									<p class="item_name">阅读器 亚马逊 全新Kindle Paperwhite 电子书阅读器（第三代）</p>
+								</a>
+								<p class="item_content">安全币<span class="item_cost">190</span>已兑换<span class="item_exchangednum">3</span>个</p>
+							</li>
+							<li class="itemlist_item mod-floatblock">
+								<a href="https://security.tencent.com/index.php/shop/prize/285" target="_blank">
+									<div class="item_pic"><img src="img/2633b859f3507b14a5c0d6bcea1a38fc.jpg" alt=""></div>
+									<p class="item_name">腾讯定制气泡狗抱枕+钥匙扣一套(白色和绿色随机发货)</p>
+									<div class="flag flag-hot"></div>
+								</a>
+								<p class="item_content">安全币<span class="item_cost">12</span>已兑换<span class="item_exchangednum">50</span>个</p>
+							</li>
+							<li class="itemlist_item mod-floatblock">
+								<a href="https://security.tencent.com/index.php/shop/prize/258" target="_blank">
+									<div class="item_pic"><img src="img/d55b4fbeaa95dd5938c6cc5938f58364.png" alt=""></div>
+									<p class="item_name">平板电脑 苹果 iPad mini 4 Wi-Fi MK9H2CH/A 64GB</p>
+								</a>
+								<p class="item_content">安全币<span class="item_cost">600</span>已兑换<span class="item_exchangednum">6</span>个</p>
+							</li>
+							<li class="itemlist_item mod-floatblock">
+								<a href="https://security.tencent.com/index.php/shop/prize/247" target="_blank">
+									<div class="item_pic"><img src="img/913c85a26734ea060eab2c64a9cfc287.jpg" alt=""></div>
+									<p class="item_name">手机 苹果 Iphone 6s 公开版 128G</p>
+								</a>
+								<p class="item_content">安全币<span class="item_cost">1100</span>已兑换<span class="item_exchangednum">4</span>个</p>
+							</li>
+							<!-- <li class="itemlist_item mod-floatblock">
+                        <a href="shopdetail.html" target="_blank">
+                            <div class="item_pic">
+                                <img src="dist/images-test/home/test-shop-ipadpro.png" alt="">
+                            </div>
+                            <p class="item_name">
+                                iPad Pro
+                            </p>
+                            <div class="flag flag-hot"></div>
+                        </a>
+                        <p class="item_content">
+                            安全币<span class="item_cost">9880</span>已兑换<span class="item_exchangednum">1038</span>个
+                        </p>
+                    </li> -->
+						</ul>
+					</div>
+				</div>
+
+				<!-- 博客(博客动态) section-blog -->
+				<div class="section section-blog">
+					<div class="section_blog">
+						<div class="mod-introduce">
+							<!-- title -->
+							<div class="introduce_title"></div>
+							<!-- icongroup -->
+							<div class="introduce_icongroup">
+								<span class="icongroup_line"></span>
+								<i class="icongroup_icon"></i>
+								<span class="icongroup_line"></span>
+							</div>
+							<!-- descript -->
+							<div class="introduce_description">
+								<p>多年的安全研究经验，最新的技术前沿报告，尽在TSRC博客频道。</p>
+							</div>
+							<!-- more -->
+							<div class="introduce_more">
+								<a class="mod-btn mod-btn-black" href="https://security.tencent.com/index.php/blog" target="_blank">更多博文</a>
+							</div>
+						</div>
+
+						<ul class="mod-itemlist-blog">
+							<li class="itemlist_item mod-floatblock">
+								<a href="https://security.tencent.com/index.php/blog/msg/120" target="_blank">
+									<div class="item_upperblock"><img src="img/397c5dd3b6e2aa8935dd13ba46f75905.jpg" alt="">
+										<div class="upperblock_mask"></div>
+										<div class="upperblock_date">
+											<p>17</p>
+											<p>Aug</p>
+										</div>
+									</div>
+									<p class="item_title">Xshell高级后门完整分析报告</p>
+								</a>
+								<p class="item_brief">近日，Xshell官方发布公告称其软件中存在后门。腾讯安全应急响应中心的实习生同学对该后门进行了详细的分析，确认这是一个具备恶意代码下载执行和数据回传等能力的高级木马。</p>
+							</li>
+							<li class="itemlist_item mod-floatblock">
+								<a href="https://security.tencent.com/index.php/blog/msg/119" target="_blank">
+									<div class="item_upperblock"><img src="img/3a2064b0589a4bc1db1aae0ff4ce0a3c.jpg" alt="">
+										<div class="upperblock_mask"></div>
+										<div class="upperblock_date">
+											<p>16</p>
+											<p>Aug</p>
+										</div>
+									</div>
+									<p class="item_title">WebSocket应用安全问题分析</p>
+								</a>
+								<p class="item_brief">WebSocket是HTML5开始提供的一种浏览器与服务器间进行全双工通讯的网络技术。WebSocket通信协议于2011年被IETF定为标准RFC 6455，WebSocket API也被W3C定为标准，主流的浏览器都已经支持WebSocket通信</p>
+							</li>
+							<li class="itemlist_item mod-floatblock">
+								<a href="https://security.tencent.com/index.php/blog/msg/118" target="_blank">
+									<div class="item_upperblock"><img src="img/5368338ad116e69d42ca419cbf24ef75.png" alt="">
+										<div class="upperblock_mask"></div>
+										<div class="upperblock_date">
+											<p>07</p>
+											<p>Aug</p>
+										</div>
+									</div>
+									<p class="item_title">解锁更多姿势——手机锁屏安全研究</p>
+								</a>
+								<p class="item_brief">随着手机功能越来越多，其在我们生活中扮演的角色也越来越重要，除了保存传统的通讯录、短信、照片等个人隐私，现在的手机还是一个支付工具，如果手机被盗用，手机锁屏密码就是保证大家数据和资金安全的第一道屏障。我们最近也研究和总结了一些手机解锁的新老姿势的安全性，在此分享给大家，欢迎大家上车一起交流。</p>
+							</li>
+							<!-- <li class="itemlist_item mod-floatblock">
+                        <a href="html/blogdetail.html" target="_blank">
+                            <div class="item_upperblock">
+                                <img src="dist/images-test/home/test-blog-bg-3.jpg" alt="">
+
+                                <div class="upperblock_mask">
+                                </div>
+
+                                <div class="upperblock_date">
+                                    <p>26</p>
+                                    <p>oct</p>
+                                </div>
+                            </div>
+                            <p class="item_title">
+                                title
+                            </p>
+                        </a>
+                        <p class="item_brief">
+                            desc
+                        </p>
+                    </li> -->
+						</ul>
+					</div>
+				</div>
+
+				<!-- 关于我们 section-aboutus -->
+				<div class="section section-aboutus">
+					<div class="backgrounds">
+						<div class="background"></div>
+						<div class="background"></div>
+						<div class="background"></div>
+						<div class="background"></div>
+
+						<div class="background"></div>
+						<div class="background"></div>
+						<div class="background"></div>
+						<div class="background"></div>
+						<div class="background"></div>
+					</div>
+					<div class="midgrounds">
+						<div class="midground"></div>
+						<div class="midground"></div>
+						<div class="midground"></div>
+						<div class="midground"></div>
+
+						<div class="midground"></div>
+						<div class="midground"></div>
+						<div class="midground"></div>
+						<div class="midground"></div>
+						<div class="midground"></div>
+					</div>
+
+					<div class="stars">
+
+					</div>
+
+					<div class="section_aboutus">
+						<div class="mod-introduce">
+							<!-- title -->
+							<div class="introduce_title"></div>
+							<!-- icongroup -->
+							<div class="introduce_icongroup">
+								<span class="icongroup_line"></span>
+								<i class="icongroup_icon"></i>
+								<span class="icongroup_line"></span>
+							</div>
+							<!-- descript -->
+							<div class="introduce_description">
+								<p>
+									腾讯一直致力于保护广大用户的安全，腾讯安全应急响应中心（Tencent Security Response Center）非常欢迎广大用户向我们反馈腾讯产品和业务的安全漏洞，以帮助我们提升产品和业务的安全性。
+								</p>
+							</div>
+							<!-- more -->
+							<div class="introduce_more">
+								<a class="mod-btn mod-btn-transparent" href="https://security.tencent.com/index.php/about">了解我们</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 确认弹窗 -->
+		<div id="base-confirm" class="mod-popup mod-popup-report">
+			<div class="popup_mask">
+			</div>
+			<div class="popup_body">
+				<div class="body_content">
+					<p class="content_title"></p>
+					<p class="content_text"></p>
+				</div>
+				<div class="body_btns">
+					<a class="mod-btn mod-btn-blue" href="javascript:void(0)">确定</a>
+					<a class="mod-btn mod-btn-black" href="javascript:void(0)">取消</a>
+				</div>
+				<i class="i-close"></i>
+			</div>
+		</div>
+
+		<!-- 提示弹窗 -->
+		<div id="base-alert" class="mod-popup mod-popup-success">
+			<div class="popup_mask">
+			</div>
+			<div class="popup_body">
+				<div class="body_content">
+					<p class="content_pic"></p>
+					<p class="content_text">捐款成功，感谢您的无私奉献</p>
+				</div>
+				<div class="i-close"></div>
+			</div>
+		</div>
+
+		<!-- 登录弹窗 -->
+		<div id="base-login-box" class="mod-popup mod-popup-report">
+			<div class="popup_mask">
+			</div>
+			<div class="popup_body">
+				<div class="body_content">
+					<p class="content_title">登录提醒</p>
+					<p class="content_text" style="text-align:center;">
+						系统检测到您还未登录或登录态已失效，请先登录
+					</p>
+					<div class="body_btns">
+						<a href="https://security.tencent.com/index.php/login/in?type=qq&amp;redirect_uri=https%3A%2F%2Fsecurity.tencent.com%2F" class="mod-btn mod-btn-black login-qq" style="border-color:#007cfa;color:#007cfa">QQ 登录</a>
+						<a href="https://security.tencent.com/index.php/login/in?type=wx&amp;redirect_uri=https%3A%2F%2Fsecurity.tencent.com%2F" class="mod-btn mod-btn-black login-wx" style="border-color:#007cfa;color:#007cfa">微信 登录</a>
+					</div>
+				</div>
+				<i class="i-close"></i>
+			</div>
+		</div>
+
+		<!-- footer -->
+		<div class="footer">
+			<div>
+				<div class="footer_about">
+					<p class="about_link">
+						<a href="http://www.tencent.com/" target="_blank">关于腾讯</a>
+						|
+						<a href="http://www.tencent.com/index_e.shtml" target="_blank">About Tencent</a>
+						|
+						<a href="http://www.qq.com/contract.shtml" target="_blank">服务条款</a>
+						|
+						<a href="https://security.tencent.com/index.php/about#joinus">加入我们</a>
+						|
+						<a href="https://security.tencent.com/index.php/report/add">报告漏洞</a>
+						|
+						<a href="https://security.tencent.com/index.php/about#friends">合作伙伴</a>
+						|
+						<a href="http://service.qq.com/" target="_blank">腾讯客服</a>
+					</p>
+					<p class="about_copyright">
+						<span>Copyright © 1998 - 2017 Tencent. All Rights Reserved</span>
+						<span>腾讯公司版权所有</span>
+					</p>
+				</div>
+
+				<div class="footer_contact">
+					<a class="contact_icon-email" href="mailto:security@tencent.com"><i></i><span>专用邮箱</span>|</a>
+					<a class="contact_icon-weibo-sina" href="http://weibo.com/u/1363173330" target="_blank"><i></i><span>新浪微博</span>|</a>
+					<!-- <a class="contact_weibo-tencent" href="javascript:void(0)" target="_blank"><i></i><span>腾讯微博</span>|</a> -->
+					<a class="contact_icon-weixin mod-qrcode" href="javascript:void(0)">
+						<i></i><span>微信公众号</span>
+						<div class="qrcode">
+							<div class="qrcode_pic">
+								<img src="img/tsrc-qrcode.jpg" alt="">
+							</div>
+							<span class="qrcode_text">扫一扫关注 TSRC 公众号</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- csrc_token -->
+		<div id="csrf_div">
+			<form action="https://security.tencent.com/index.php" method="post" accept-charset="utf-8" class="form_horizontal">
+				<div style="display:none">
+					<input type="hidden" name="csrf_token" value="2bc8cb157c9126799202b8fe9ee3448c">
+				</div>
+			</form>
+		</div>		
+
+	</body>
+
+</html>

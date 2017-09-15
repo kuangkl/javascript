@@ -1,0 +1,64 @@
+
+* {
+	margin: 0;
+}
+
+.header {
+	height: 100px;
+	background: #066;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	-webkit-transition: .6s;
+	transition: .6s;
+}
+
+.header-scroll {
+	height: 80px;
+	background: gray;
+}
+
+.quan {
+	width: 160px;
+	height: 160px;
+	background: url(../img/q.png) no-repeat;
+	margin-top: 110px;
+	-webkit-animation: yuan 3.5s linear 0s infinite;
+	animation: yuan 3.5s linear 0s infinite;
+	position: absolute;
+}
+
+@-webkit-keyframes yuan {
+	from {
+		-webkit-transform: rotateZ(0);
+		transform: rotateZ(0);
+	}
+	to {
+		-webkit-transform: rotateZ(360deg);
+		transform: rotateZ(360deg);
+	}
+}
+
+@keyframes yuan {
+	from {
+		-webkit-transform: rotateZ(0);
+		transform: rotateZ(0);
+	}
+	to {
+		-webkit-transform: rotateZ(360deg);
+		transform: rotateZ(360deg);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

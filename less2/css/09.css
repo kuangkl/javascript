@@ -107,3 +107,28 @@ section .link2 a {
 section .link2 span {
   padding-left: 4px;
 }
+section .hot {
+  height: 90px;
+  background: #fff url(../img/hot.gif) no-repeat left top;
+  border: 1px solid #e8e8e8;
+  margin-bottom: 10px;
+}
+section .hot:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+section .hot p {
+  width: 77px;
+  font-size: 14px;
+  margin-top: 20px;
+  float: left;
+  text-align: right;
+}
+section .hot p span:nth-child(1) {
+  display: block;
+}
+section .hot a {
+  float: right;
+  padding: 10px;
+}
