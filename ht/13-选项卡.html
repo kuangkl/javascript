@@ -48,6 +48,8 @@
 				}
 			}
 		</script>
+		<link rel="stylesheet" href="swiper.min.css" />
+<script src="swiper.min.js"></script>
 	</head>
 	<body>
 		<input type="button" name="" id="" value="按钮1" style="background: #f60;" />
@@ -55,6 +57,23 @@
 		<input type="button" name="" id="" value="按钮3" />
 		<div style='display: block;'>内容一</div>
 		<div>内容二</div>
-		<div>内容三</div>
+		<div>
+			<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide blue-slide">slider1</div>
+				<div class="swiper-slide red-slide">slider2</div>
+				<div class="swiper-slide orange-slide">slider3</div>
+			</div>
+		</div>
+		<script src="js/swiper.min.js"></script>
+		<script type="text/javascript">
+			var mySwiper = new Swiper('.swiper-container', {
+				observer:true,//修改swiper自己或子元素时，自动初始化swiper  
+observeParents:true,//修改swiper的父元素时，自动初始化swiper  
+				loop: true,
+				autoplay: 3000,
+			});
+		</script>
+		</div>
 	</body>
 </html>
